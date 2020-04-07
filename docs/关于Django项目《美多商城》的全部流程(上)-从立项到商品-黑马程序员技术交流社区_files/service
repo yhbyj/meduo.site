@@ -1,0 +1,1 @@
+typeof ubaGetCallback === 'function' && ubaGetCallback({"success":true,"pageId":"4d33d571-76cc-11ea-96f7-b97f34e24f52","userId":"e2946bb1-6f61-11ea-96f7-b97f34e24f52","sessionId":"4d33d572-76cc-11ea-96f7-b97f34e24f52","message":"200 ok!"});

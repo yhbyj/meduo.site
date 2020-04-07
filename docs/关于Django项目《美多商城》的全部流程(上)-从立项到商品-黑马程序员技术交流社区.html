@@ -1,0 +1,2396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0075)http://bbs.itheima.com/forum.php?mod=viewthread&tid=426624&highlight=django -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区</title>
+<link href="http://bbs.itheima.com/thread-426624-1-1.html" rel="canonical"><meta name="keywords" content="关于Django项目《美多商城》的全部流程(上)-从立项到商品">
+<meta name="description" content="一.立项1.在码云上创建项目目录2.使用ssh方式把项目克隆下来    1)生成密钥对ssh-keygen -t rsa    2)存放在家目录下的 .ssh  ... ">
+<meta name="generator" content="Discuz! X3.2">
+<meta name="author" content="Discuz! Team and Comsenz UI Team">
+<meta name="copyright" content="2001-2013 Comsenz Inc.">
+<meta name="MSSmartTagsPreventParsing" content="True">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<!--<base href="http://bbs.itheima.com/">--><base href="."><link rel="stylesheet" type="text/css" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/style_12_common.css"><link rel="stylesheet" type="text/css" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/style_12_forum_viewthread.css">    <script charset="UTF-8" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/uba.min.js.下载"></script><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/push.js.下载"></script><script charset="UTF-8" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/QiMoIMSDK.js.下载"></script><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/jquery.min.js.下载" type="text/javascript"></script>
+<script type="text/javascript">var STYLEID = '12', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'UFu', charset = 'utf-8', discuz_uid = '0', cookiepre = 'mcb9_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = '', creditnotice = '1|技术分|,2|黑马币|,4|经验|', defaultstyle = '', REPORTURL = 'aHR0cDovL2Jicy5pdGhlaW1hLmNvbS9mb3J1bS5waHA/bW9kPXZpZXd0aHJlYWQmdGlkPTQyNjYyNCZoaWdobGlnaHQ9ZGphbmdv', SITEURL = 'http://bbs.itheima.com/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/common.js.下载" type="text/javascript"></script>
+    <!--[if IE 6]>
+     <script language='javascript' type="text/javascript">   
+    function ResumeError() {  
+         return true;  
+    }  
+    window.onerror = ResumeError;   
+    </script> 
+    <![endif]-->
+<!--92810专员添加熊掌号ID声明-->
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/c.js.下载" type="text/javascript"></script><style>@charset "utf-8";
+@font-face{font-family:'nc_iconfont';src:url("//at.alicdn.com/t/font_1465353706_4784257.eot");src:url("//at.alicdn.com/t/font_1465353706_4784257.eot?#iefix") format('embedded-opentype'),url("//at.alicdn.com/t/font_1465353706_4784257.woff") format('woff'),url("//at.alicdn.com/t/font_1465353706_4784257.ttf") format('truetype'),url("//at.alicdn.com/t/font_1465353706_4784257.svg#iconfont") format('svg')}@font-face{font-family:'ncpc_iconfont';src:url("//at.alicdn.com/t/font_384029_rhzpmteb25oecdi.eot");src:url("//at.alicdn.com/t/font_384029_rhzpmteb25oecdi.eot?#iefix") format('embedded-opentype'),url("//at.alicdn.com/t/font_384029_rhzpmteb25oecdi.woff") format('woff'),url("//at.alicdn.com/t/font_384029_rhzpmteb25oecdi.ttf") format('truetype'),url("//at.alicdn.com/t/font_384029_rhzpmteb25oecdi.svg#ncpc_iconfont") format('svg')}.nc-container div#nc-loading-circle{background:transparent;width:20px;height:20px;display:inline-block;position:relative;vertical-align:middle}.nc-container div#nc-loading-circle .sk-circle{background:transparent;width:100%;height:100%;position:absolute;left:0;top:0}.nc-container #nc-loading-circle .sk-circle:before{content:'';display:block;margin:0 auto;width:15%;height:15%;background-color:#818181;border-radius:100%;-webkit-animation:sk-circleFadeDelay 1.2s infinite ease-in-out both;animation:sk-circleFadeDelay 1.2s infinite ease-in-out both}.nc-container #nc-loading-circle .sk-circle2{-webkit-transform:rotate(30deg);-ms-transform:rotate(30deg);transform:rotate(30deg)}.nc-container #nc-loading-circle .sk-circle3{-webkit-transform:rotate(60deg);-ms-transform:rotate(60deg);transform:rotate(60deg)}.nc-container #nc-loading-circle .sk-circle4{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.nc-container #nc-loading-circle .sk-circle5{-webkit-transform:rotate(120deg);-ms-transform:rotate(120deg);transform:rotate(120deg)}.nc-container #nc-loading-circle .sk-circle6{-webkit-transform:rotate(150deg);-ms-transform:rotate(150deg);transform:rotate(150deg)}.nc-container #nc-loading-circle .sk-circle7{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.nc-container #nc-loading-circle .sk-circle8{-webkit-transform:rotate(210deg);-ms-transform:rotate(210deg);transform:rotate(210deg)}.nc-container #nc-loading-circle .sk-circle9{-webkit-transform:rotate(240deg);-ms-transform:rotate(240deg);transform:rotate(240deg)}.nc-container #nc-loading-circle .sk-circle10{-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}.nc-container #nc-loading-circle .sk-circle11{-webkit-transform:rotate(300deg);-ms-transform:rotate(300deg);transform:rotate(300deg)}.nc-container #nc-loading-circle .sk-circle12{-webkit-transform:rotate(330deg);-ms-transform:rotate(330deg);transform:rotate(330deg)}.nc-container #nc-loading-circle .sk-circle2:before{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.nc-container #nc-loading-circle .sk-circle3:before{-webkit-animation-delay:-1s;animation-delay:-1s}.nc-container #nc-loading-circle .sk-circle4:before{-webkit-animation-delay:-.9s;animation-delay:-.9s}.nc-container #nc-loading-circle .sk-circle5:before{-webkit-animation-delay:-.8s;animation-delay:-.8s}.nc-container #nc-loading-circle .sk-circle6:before{-webkit-animation-delay:-.7s;animation-delay:-.7s}.nc-container #nc-loading-circle .sk-circle7:before{-webkit-animation-delay:-.6s;animation-delay:-.6s}.nc-container #nc-loading-circle .sk-circle8:before{-webkit-animation-delay:-.5s;animation-delay:-.5s}.nc-container #nc-loading-circle .sk-circle9:before{-webkit-animation-delay:-.4s;animation-delay:-.4s}.nc-container #nc-loading-circle .sk-circle10:before{-webkit-animation-delay:-.3s;animation-delay:-.3s}.nc-container #nc-loading-circle .sk-circle11:before{-webkit-animation-delay:-.2s;animation-delay:-.2s}.nc-container #nc-loading-circle .sk-circle12:before{-webkit-animation-delay:-.1s;animation-delay:-.1s}@-webkit-keyframes sk-circleFadeDelay{0%,39%,100%{opacity:0}40%{opacity:1}}@-webkit-keyframes sk-circleFadeDelay{0%,39%,100%{opacity:0}40%{opacity:1}}@keyframes sk-circleFadeDelay{0%,39%,100%{opacity:0}40%{opacity:1}}.nc-container .scale_text2 #nc-loading-circle .sk-circle:before{background-color:#fff}.nc_iconfont{font-family:"nc_iconfont";color:#ff3f08;font-size:16px;font-style:normal}.ncpc_iconfont{font-family:"ncpc_iconfont";color:#ff3f08;font-size:16px;font-style:normal}.captcha-error .icon_ban{float:left;font-size:16px;padding-right:5px;line-height:14px}.clickCaptcha_text .btn_refresh{font-style:normal;cursor:pointer;background:#fff;color:#737383}.imgCaptcha .btn_refresh{font-size:20px;cursor:pointer;background:#fff;color:#737383}.nc_voice{display:none;position:relative;margin-top:-34px;z-index:99;width:auto;height:34px;background:#fff}.omeo-code-img,.omeo-code-audio{font-size:0;text-align:left}.omeo-code-audiobox,.omeo-code-img a,.omeo-code-audio a,.omeo-code-state{display:inline-block;*display:inline;zoom:1;height:32px;vertical-align:top;font-size:12px}.omeo-code .omeo-code-refresh{background:transparent;width:32px;height:32px;font-size:20px;color:#888;text-align:center;text-decoration:none;padding-left:4px;line-height:32px}.omeo-code .omeo-switch{display:none;width:32px;height:32px;border-left:1px solid #e1e1e1;background-image:url("//g.alicdn.com/sd/ncpc/images/checkcode.png");background-repeat:no-repeat}.omeo-img-active .omeo-code-img{display:block}.omeo-img-active .omeo-code-audio{display:none}.omeo-code-img img{border:1px solid #cdcdcd;cursor:pointer}.omeo-code-img .omeo-switch{background-position:9px -41px}.omeo-audio-active .omeo-code-audio{display:block}.omeo-audio-active .omeo-code-img{display:none}.omeo-code-refresh{position:relative;left:95px}.omeo-code-audiobox{position:relative;height:30px;line-height:32px;border:1px solid #e1e1e1;text-align:center;overflow:hidden;left:100px;top:1px;width:45%;min-width:80px;background-color:#eee}.omeo-code-audiobox a{display:block;text-decoration:none;color:#06c}.omeo-code-audiobox-playing a{visibility:hidden}.omeo-code-audiobox span,.omeo-code-audiobox b{visibility:hidden;position:absolute;top:0;left:0;height:30px;font-weight:100;overflow:hidden}.omeo-code-audiobox-playing span,.omeo-code-audiobox-playing b{visibility:visible}.omeo-code-audiobox span{z-index:0;width:0;background:#186bca}.omeo-code-audiobox b{width:100%;z-index:1;text-align:left;text-indent:30px;color:#999;background:url("//g.alicdn.com/sd/ncpc/images/checkcode.png") no-repeat 14px -89px}.omeo-code-audio .omeo-switch{background-position:5px 10px}input[type=text]::-ms-clear{display:none}.omeo-box{position:relative;background-color:#fff}.omeo-code-echo{position:absolute;top:2px;left:2px}.omeo-code-echo input{padding:5px;height:18px;line-height:18px;border:1px solid #ddd;width:80px;outline:0}.omeo-code-state{height:30px;line-height:30px;text-indent:25px;white-space:nowrap;background-image:url("//g.alicdn.com/sd/ncpc/images/checkcode.png");background-repeat:no-repeat;background-position:100px 100px}.omeo-code-echo .omeo-code-state-error{width:auto;background-position:7px -193px}.omeo-code-echo .omeo-code-state-success{position:absolute;width:30px;background-position:7px -243px}.omeo-code-state{position:absolute;left:0;top:28px}.nc_voice_close{display:inline-block;position:relative;cursor:pointer;left:95px;top:0;border-left:#ddd 2px solid;padding:0 0 0 7px;background-color:#fff;font-size:20px;color:#888;line-height:32px}.nc_help{position:absolute;width:100%;height:100%;left:0;top:0;z-index:99999}.nc_help .mask{background-color:#000;opacity:.5;filter:alpha(opacity=50);width:100%;height:100%;top:0;left:0}.nc_btn_close{position:absolute;height:20px;left:500px;border-radius:20px;padding:10px 30px;background-color:#aaa;color:#fff;cursor:pointer;z-index:10}.nc_btn_close:hover{background-color:#afafaf}.nc_hand{position:absolute;width:68px;height:53px;background-image:url("//g.alicdn.com/sd/ncpc/images/hand.png");z-index:3}.nc_slide_bg{z-index:3;font-size:12px;text-align:center;color:#fff;line-height:34px}.nc_voicebtn{position:absolute;padding:0;right:-25px;font-size:23px;color:#888;cursor:pointer;line-height:34px}.nc_helpbtn{position:absolute;cursor:pointer;right:-95px;top:4px;font-size:12px;background-color:#ffb668;color:#fff;padding:4px;border-radius:2px;line-height:18px;display:none}.nc_helpbtn:before{width:0;height:0;content:"";position:absolute;left:-2px;top:6px;border-top:4px solid transparent;border-bottom:4px solid transparent;border-right:4px solid #ffb668}.nc-container .errloading{border:#faf1d5 1px solid;text-indent:3px;background-image:none;font-size:12px;width:290px;line-height:20px;padding:7px 5px 8px 5px;color:#ef9f06;}.nc-container .errloading a{color:#30a7fc}.nc_captcha_text .nc_err{float:left;text-indent:0}.button_move{transition:left .5s;-moz-transition:left .5s;-webkit-transition:left .5s;-o-transition:left .5s}.bg_move{transition:width .5s;-moz-transition:width .5s;-webkit-transition:width .5s;-o-transition:width .5s}.nc_slide_box{position:absolute}.nc_captcha_text{height:auto;line-height:20px;visibility:hidden;font-size:12px;color:#999;font-weight:normal}.nc-container .nc_captcha_img_text{width:auto;height:auto;line-height:20px;visibility:hidden;font-size:12px;color:#999;font-weight:normal;display:none;padding:0 0 10px 0;background-position:0 0;}.nc-container .nc_captcha_img_text span.nc-lang-cnt{line-height:inherit}.nc-container .imgCaptcha .nc_captcha_img_text{width:auto}.nc_captcha_img_text{height:auto;line-height:20px;visibility:hidden;font-size:12px;color:#999;font-weight:normal;display:none;padding:0 0 10px 3px;background-position:0 0}.nc-container .nc_wrapper{width:auto}.nc_scale{width:auto;height:34px;background:#e8e8e8;position:relative;margin:0;padding:0}.nc_scale.is_audio{margin-right:25px}.nc-container .nc_scale div{height:auto}.nc-container .nc_scale ul{list-style:none}.nc-container .nc_scale .btn_slide{color:#737383;background-image:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.nc-container .nc_scale span{text-align:center;width:40px;height:32px;line-height:32px;border:1px solid #ccc;position:absolute;left:0;cursor:move;background:#fff;z-index:2}.nc-container .nc_scale span.nc-lang-cnt{*line-height:34px;float:none;width:auto;height:auto;*height:34px;border:none;position:static;cursor:inherit;background:none;z-index:0;display:inline}.nc_slide_button{width:40px;height:32px;border:1px solid #ccc;position:absolute;left:0;cursor:move;background:#fff url("//g.alicdn.com/sd/ncpc/images/rt.png") no-repeat center;z-index:2}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.nc_scale span{height:32px}}.nc-container .nc_scale .btnok{cursor:default;background:#fff url("//g.alicdn.com/sd/ncpc/images/yes.png") no-repeat center;z-index:3}.nc-container .nc_scale .btnok2{cursor:default;font-size:20px;background:#fff url("//g.alicdn.com/sd/ncpc/images/no.png") no-repeat center;z-index:3}.nc-container .nc_scale .btn_warn{cursor:default;color:#ff3f08;line-height:34px;text-align:center;font-size:20px;background:#fff;z-index:3}.nc-container .clickCaptcha_text .btn_refresh{font-size:20px}.nc-container .clickCaptcha_text .icon_close{line-height:30px;margin-left:8px;cursor:default;color:#ff3f08;font-size:16px;float:left;margin-right:2px;background:transparent;z-index:3}.nc-container .nc_captcha_img_text .icon_close{cursor:default;color:#ff3f08;font-size:16px;float:left;margin-right:4px;background:transparent;z-index:3;line-height:18px}.nc-container .errloading .icon_warn{cursor:default;color:#ff3f08;font-size:18px;float:left;background:transparent;z-index:3}.nc-container .nc_scale .btn_ok{cursor:default;line-height:34px;text-align:center;font-size:20px;background:#fff;z-index:3;color:#76c61d}.nc-container .nc_scale .nc_ok,.nc-container .nc_scale .nc_bg{background:#7ac23c}.nc-container .nc_scale .nc_bg{position:absolute;height:100%;_height:34px;left:0;width:10px}.nc-container .nc_scale div.redbar{background:#fc461e;opacity:.5;filter:alpha(opacity=50)}.nc-container .nc_scale div.orange{background:#f00}.nc-container .nc_scale .scale_text{width:100%;height:100%;text-align:center;position:absolute;z-index:1;background:transparent;color:#9c9c9c;line-height:34px;font-size:12px;cursor:pointer}.nc-container .nc_scale .scale_text2{text-align:left;color:#fff;font-size:12px;text-indent:10px}.nc-container .nc_scale .scale_text2 b{padding-left:0;font-weight:normal}.nc-container .nc_scale .scale_text.scale_loading_text{text-align:center}.nc-container .nc_scale .imgCaptcha,.nc-container .nc_scale .clickCaptcha{display:none;overflow:hidden;border:1px solid #ccc;background:#fff;z-index:20000;}.nc-container .nc_scale .imgCaptcha p.error span,.nc-container .nc_scale .clickCaptcha p.error span{line-height:normal}.nc-container .nc_scale .imgCaptcha{height:auto}.nc-container .nc_scale .clickCaptcha{position:absolute;left:0;top:35px;height:270px;background:#fff;display:none;}.nc-container .nc_scale .clickCaptcha p.error i{color:#ff3f08;font-style:normal}.nc-container .nc_scale .clickCaptcha div{position:static;clear:both;width:100%;background:#fff;height:auto}.nc-container .nc_scale .clickCaptcha .clickCaptcha_text{height:30px;line-height:30px;font-size:12px;color:#999;}.nc-container .nc_scale .clickCaptcha .clickCaptcha_text b{font-weight:normal}.nc_btn_2{position:absolute;right:0;top:0;cursor:pointer;margin:2px 9px 0 0}.nc_iconfont.nc_btn_2{position:absolute;right:0;top:0;cursor:pointer}.nc_iconfont.nc_btn_1{position:absolute;top:10px;right:5px}.nc_btn_1{top:10px;right:10px}.scale_text i{font-style:normal;border:none;position:static;cursor:default;color:#fffc00;background:none;display:inline;width:100%}.nc-container .clickCaptcha .clickCaptcha_img{margin:0 auto;clear:both;position:relative;}.nc-container .clickCaptcha .clickCaptcha_img img{width:230px;height:230px;margin-left:10px;margin-top:5px}.nc-container .clickCaptcha .clickCaptcha_btn{margin:10px 0 0 15px;position:relative;text-align:left;}.nc-container .clickCaptcha .clickCaptcha_btn img{cursor:pointer}.nc-container .imgCaptcha{position:absolute;left:0;top:35px;height:auto;padding-bottom:15px;border:1px solid #ccc;background:#fff;}.nc-container .imgCaptcha div{position:static;width:90%;background-color:#fff}.nc-container .imgCaptcha,.nc-container .clickCaptcha{text-align:left;}.nc-container .imgCaptcha a,.nc-container .clickCaptcha a{color:#ff3f08}.nc-container .imgCaptcha .imgCaptcha_text{height:42px;line-height:42px;width:120px;background:#fff;font-size:14px;text-align:left;color:#747474;float:left;margin-left:10px;}.nc-container .imgCaptcha .imgCaptcha_text input{margin-top:5px;height:30px;line-height:30px;font-size:14px;width:90px;background:#fff}.nc-container .imgCaptcha .imgCaptcha_text input:focus{outline:none;color:#bbb}.nc-container .imgCaptcha .imgCaptcha_btn{margin:0 0 0 12px;*margin-left:0;clear:both;padding-top:5px;width:90%;}.nc-container .imgCaptcha .imgCaptcha_btn img{cursor:pointer}.nc-container .imgCaptcha .nc_scale_submit{margin:0 auto;cursor:pointer;background-color:#fc461e;width:120px;height:32px;line-height:32px;color:#fff;text-align:center}.nc-container .imgCaptcha .imgCaptcha_img{margin:4px 0 0 100px;height:40px;width:130px;overflow:hidden;cursor:pointer;}.nc-container .imgCaptcha .imgCaptcha_img img{width:130px}.nc-container .imgCaptcha .imgCaptcha_img input{border:solid 1px #ccc}.nc-lang-ar_MA,.nc-lang-ar_SA,.nc-lang-iw_HE,.nc-lang-iw_IL{text-align:right;*text-align:left;}.nc-lang-ar_MA .nc_scale .scale_text2,.nc-lang-ar_SA .nc_scale .scale_text2,.nc-lang-iw_HE .nc_scale .scale_text2,.nc-lang-iw_IL .nc_scale .scale_text2{text-align:right;}.nc-lang-ar_MA .nc_scale .scale_text2 span,.nc-lang-ar_SA .nc_scale .scale_text2 span,.nc-lang-iw_HE .nc_scale .scale_text2 span,.nc-lang-iw_IL .nc_scale .scale_text2 span{*display:inline-block;padding:0 56px 0 0}.nc-lang-ar_MA .nc_captcha_img_text,.nc-lang-ar_SA .nc_captcha_img_text,.nc-lang-iw_HE .nc_captcha_img_text,.nc-lang-iw_IL .nc_captcha_img_text{*text-align:right}.nc-lang-ar_MA span.nc-lang-cnt,.nc-lang-ar_SA span.nc-lang-cnt,.nc-lang-iw_HE span.nc-lang-cnt,.nc-lang-iw_IL span.nc-lang-cnt{text-align:right;direction:rtl}.nocaptcha span.nc-lang-cnt{float:none;height:auto;line-height:30px}.nc-container{font-size:12px;-ms-touch-action:none;touch-action:none;}.nc-container p{margin:0;padding:0;display:inline}.nc-container .scale_text.scale_text span[data-nc-lang="_startTEXT"]{display:inline-block;width:100%}.nc-container .scale_text.scale_text.slidetounlock span[data-nc-lang="_startTEXT"]{background:-webkit-gradient(linear,left top,right top,color-stop(0,#4d4d4d),color-stop(.4,#4d4d4d),color-stop(.5,#fff),color-stop(.6,#4d4d4d),color-stop(1,#4d4d4d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-animation:slidetounlock 3s infinite;-webkit-text-size-adjust:none}.nc-container .nc_scale .nc-align-center.scale_text2{text-align:center;text-indent:-42px}@-webkit-keyframes slidetounlock{0%{background-position:-200px 0}100%{background-position:200px 0}}.nc-container.tb-login .clickCaptcha_text .icon_close{line-height:30px;margin-left:0;cursor:default;color:#ff3f08;font-size:16px;float:left;margin-right:0;background:transparent;z-index:3}.nc-container.tb-login{position:relative;margin-top:20px;display:none;}.nc-container.tb-login .nc_scale{width:auto;}.nc-container.tb-login .nc_scale .scale_text2{text-indent:-42px;text-align:center;}.nc-container.tb-login .nc_scale .scale_text2 b{padding:0}.nc-container.tb-login .nc_scale.nc_err div.scale_text{background:#f79977}.nc-container.tb-login .errloading{width:auto}.nc-container.tb-login .imgCaptcha,.nc-container.tb-login .clickCaptcha{width:252px;*width:256px;border:0;*height:300px;min-height:300px;max-height:inherit !important;}.nc-container.tb-login .imgCaptcha div.login-msg.error,.nc-container.tb-login .clickCaptcha div.login-msg.error{background:#fff2f2}.nc-container.tb-login .imgCaptcha .captcha-error,.nc-container.tb-login .clickCaptcha .captcha-error{position:absolute;top:0;width:244px;height:auto;margin-bottom:15px;padding:3px;border:solid 1px #ff8e8e;line-height:18px}.nc-container.tb-login .imgCaptcha .captcha-inform,.nc-container.tb-login .clickCaptcha .captcha-inform{font-size:110%;margin-left:20px}.nc-container.tb-login .imgCaptcha{padding-top:66px;}.nc-container.tb-login .imgCaptcha .imgCaptcha_text{width:100px;margin-left:0;}.nc-container.tb-login .imgCaptcha .imgCaptcha_text input:focus{color:#000}.nc-container.tb-login .imgCaptcha .imgCaptcha_img{width:120px;_width:100px}.nc-container.tb-login .imgCaptcha .imgCaptcha_btn{width:100%;margin-left:0}.nc-container.tb-login .imgCaptcha .nc_scale_submit{width:100%;height:36px;line-height:36px;margin-top:20px;margin-left:0;border-radius:3px;font-size:16px;font-family:Tahoma,Helvetica,Arial,sans-serif;background:#ff3f08}.nc-container.tb-login .clickCaptcha{padding-top:40px;}.nc-container.tb-login .clickCaptcha .clickCaptcha_text{text-indent:4px}.nc-container.tb-login .clickCaptcha .clickCaptcha_img img{margin-left:10px}.nc-container.tb-login .nc_btn_1{top:77px;_top:57px}.nc-container.tb-login .nc_btn_2{top:36px}.login .nc-container.tb-login .login-msg p,.login-box .nc-container.tb-login .login-msg p{width:auto;float:left}.nc-container.tb-login.nc-old-login{margin:20px 0 10px 0;width:250px;}.nc-container.tb-login.nc-old-login .nc_wrapper{width:250px}.nc-container.tb-login.nc-old-login .imgCaptcha,.nc-container.tb-login.nc-old-login .clickCaptcha{width:250px;min-height:auto;}.nc-container.tb-login.nc-old-login .imgCaptcha .captcha-error,.nc-container.tb-login.nc-old-login .clickCaptcha .captcha-error{line-height:16px}.nc-container.tb-login.nc-old-login .clickCaptcha{padding-top:28px;}.nc-container.tb-login.nc-old-login .clickCaptcha .clickCaptcha_img img{width:200px;height:200px}.nc-container.nc-old-login.show-click-captcha{padding-bottom:60px}.nc-container.nc-old-login.show-click-captcha.nc-tm-min-fix{padding-bottom:40px}.nc-container.tb-login.nc-tm-min-fix .clickCaptcha{max-height:340px !important}#content .login-box .bd .nc-container.tb-login .login-msg{margin:10px auto 15px auto}#content .login-box .bd .nc-container.tb-login.nc-old-login.show-click-captcha .login-msg{margin:2px 0 0 0}.nc-container .nc_scale .nc-cc{display:none;position:absolute;left:0;top:35px;z-index:20000;width:360px;height:570px;border:1px solid #5eaef1;border-radius:4px;background:#fff;font-size:14px;line-height:18px;color:#333;}.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-btn,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-btn{background-color:#90c1eb}.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-btn,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-btn,.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-refresh,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-refresh{cursor:default}.nc-container .nc_scale .nc-cc.nc-cc-status-loading .nc-cc-refresh,.nc-container .nc_scale .nc-cc.nc-cc-status-verifing .nc-cc-refresh{color:#999}.nc-container .nc_scale .nc-cc a{color:#3199f4;text-decoration:none}.nc-container .nc_scale .nc-cc .nc_iconfont{vertical-align:top;margin-right:8px}.nc-container .nc_scale .nc-cc-btn{display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;width:100px;line-height:30px;text-align:center;background-color:#3199f4;color:#fff;border-radius:4px;cursor:pointer;}.nc-container .nc_scale .nc-cc-btn.nc-cc-disabled{background-color:#90c1eb;cursor:default}.nc-container .nc_scale .nc-cc-btn .nc-lang-cnt{line-height:18px}.nc-container .nc_scale .nc-cc-header{padding:20px 20px 19px 20px;height:100px;background:#f4f8fa;border-bottom:1px solid #ccc}.nc-container .nc_scale .nc-cc-img1-box{float:left;width:100px;height:100px;margin-right:16px}.nc-container .nc_scale .nc-cc-txt{overflow:hidden;*zoom:1;line-height:30px;padding-top:11px}.nc-container .nc_scale .nc-cc-img2-box{position:relative;padding:0 20px;margin-top:20px}.nc-container .nc_scale .nc-cc-items{position:absolute;left:20px;_left:0;top:0;width:320px;overflow:hidden}.nc-container .nc_scale .nc-cc-items-inner{margin-right:-20px}.nc-container .nc_scale .nc-cc-item{position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;margin-right:10px;margin-bottom:10px;border:1px solid #ccc;width:98px;height:98px;background:url("//gtms02.alicdn.com/tps/i2/T1ty2QFNNXXXc6Yc2r-1-1.gif");}.nc-container .nc_scale .nc-cc-item:hover{border-color:#3199f4}.nc-container .nc_scale .nc-cc-item .nc_iconfont{display:none;position:absolute;right:0;bottom:0;color:#3199f4;font-size:22px;margin-right:0}.nc-container .nc_scale .nc-cc-item.nc-cc-selected .nc_iconfont{display:block}.nc-container .nc_scale .nc-cc-tip{display:none;position:absolute;left:0;bottom:60px;width:360px;line-height:18px;text-align:center;color:#eb4f38;}.nc-container .nc_scale .nc-cc-tip span{line-height:normal}.nc-container .nc_scale .nc-cc-footer{position:absolute;left:0;bottom:20px;width:360px;height:30px;line-height:30px;text-align:center;}.nc-container .nc_scale .nc-cc-footer .nc_iconfont{color:#c4cbd0}.nc-container .nc_scale .nc-cc-refresh,.nc-container .nc_scale .nc-cc-wait{position:absolute;left:20px;top:0;color:#3199f4;cursor:pointer}.nc-container .nc_scale .nc-cc-wait{display:none}.nc-container .nc_scale .nc-cc-cancel{position:absolute;right:20px;top:0;color:#3199f4;cursor:pointer;}.nc-container .nc_scale .nc-cc-cancel .nc_iconfont{position:relative;top:-1px}.nc-container .nc_scale .nc-cc-loading{margin-top:247px;text-align:center;line-height:14px}.nc-container .nc_scale .nc-cc-loading-img{display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;vertical-align:middle;background:url("//img.alicdn.com/tps/TB1OdxsKpXXXXcgXFXXXXXXXXXX-14-14.gif") no-repeat;width:14px;height:14px;position:relative;top:-1px;margin-right:9px}.nc-container .nc_scale .nc-cc-fail{position:absolute;left:50%;top:50%;width:320px;height:180px;margin-left:-160px;margin-top:-90px;background:#fff;border-radius:4px}.nc-container .nc_scale .nc-cc-fail-inner{text-align:center;padding:55px 10px 10px}.nc-container .nc_scale .nc-cc-fail-action{margin:28px 0 18px;}.nc-container .nc_scale .nc-cc-fail-action a{display:inline-block;*display:inline;*zoom:1;vertical-align:top;letter-spacing:normal;word-spacing:normal;line-height:30px;margin-left:16px}.nc-container .nc_scale .nc-cc-contact{text-align:right;color:#666;padding-right:9px}.nc-container .nc_scale .nc-cc-mask{display:none;position:absolute;left:0;top:0;width:360px;height:570px;background:rgba(0,0,0,0.3);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');}:root .nc-container .nc_scale .nc-cc-mask{-webkit-filter:none;filter:none}.nc-container .nc_scale .nc-cc-arrow-1,.nc-container .nc_scale .nc-cc-arrow-2{display:none;position:absolute;top:340px;border:solid transparent;height:0;width:0}.nc-container .nc_scale .nc-cc-arrow-1{border-width:16px;margin-top:-1px}.nc-container .nc_scale .nc-cc-arrow-2{border-width:15px}.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-1,.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-1,.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-2,.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-2{display:block;_display:none}.nc-container .nc_scale .nc-cc-right{left:180px;top:-339px;}.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-1{border-right-color:#5eaef1;left:-32px}.nc-container .nc_scale .nc-cc-right .nc-cc-arrow-2{border-right-color:#fff;left:-30px}.nc-container .nc_scale .nc-cc-left{left:-335px;top:-339px;}.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-1{border-left-color:#5eaef1;right:-32px}.nc-container .nc_scale .nc-cc-left .nc-cc-arrow-2{border-left-color:#fff;right:-30px}</style><link type="text/css" rel="stylesheet" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/chatStyle.css"><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/share.js.下载"></script><script type="text/javascript" id="ZXljeZWYDaYYKIIKJUanPNWXFOOqpQQJ" charset="UTF-8" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/common_extra.js.下载"></script><link rel="stylesheet" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/share_style0_16.css"><link rel="stylesheet" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/share_popup.css"><link rel="stylesheet" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/select_share.css"></head><body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;"><script onload="window[&#39;cambrian_sync_loader_success158604303973721&#39;]()" onerror="window[&#39;cambrian_sync_loader_fail_158604303973721&#39;]()" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/main.833c272c.js.下载"></script>
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/c.js(1).下载" type="text/javascript"></script><script onload="window[&#39;cambrian_sync_loader_success1586043039833784&#39;]()" onerror="window[&#39;cambrian_sync_loader_fail_1586043039833784&#39;]()" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/main.833c272c.js.下载"></script><script type="application/ld+json">
+{
+"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+"@id": "http://bbs.itheima.com/thread-426624-1-1.html",
+"appid": "1577048725284148",
+"title": "关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区",
+"images": ["http://bbs.itheima.com/forum.php?mod=image&aid=&size=300x200&key=fdda0e6dee6b5dbe"],
+"description": "一.立项1.在码云上创建项目目录2.使用ssh方式把项目克隆下来    1)生成密钥对ssh-keygen -t rsa    2)存放在家目录下的 .ssh  ... ",
+"pubDate": "2018-10-28T07:11:03"
+}
+</script>
+<script type="text/javascript" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/7moorInit.js.下载" async="async">
+</script><meta name="application-name" content="黑马程序员技术交流社区">
+<meta name="msapplication-tooltip" content="黑马程序员技术交流社区">
+<meta name="msapplication-task" content="name=社区首页;action-uri=http://bbs.itheima.com/forum.php;icon-uri=http://bbs.itheima.com/static/image/common/bbs.ico">
+<meta name="msapplication-task" content="name=家园;action-uri=http://bbs.itheima.com/home.php;icon-uri=http://bbs.itheima.com/static/image/common/home.ico">
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/forum.js.下载" type="text/javascript"></script>
+<meta name="baidu-site-verification" content="Pvki6lKtl5">
+
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+ 
+ 
+ 
+ 
+ 
+     
+   
+  
+  
+ 
+ 
+  
+<div class="nav_right">
+<ul>
+<li class="nav1"><i id="zxclose" style="display: inline;"></i><a href="javascript:;" onclick="qimoChatClick();"><div class="div1" style="display: block;"><p>前沿技术，免费试学16天</p><div class="div2"></div></div></a></li>
+<li class="nav2"><a href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3414556270" target="_blank"></a></li>
+<li class="nav3"><a href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3414556270" target="_blank"></a></li>
+<li class="nav4"><a href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3414556270" target="_blank"></a></li>
+<li class="nav5" id="back" style="visibility: visible;"><a href="javascript:;"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(function(){
+jQuery(window).scroll(function(){
+    var A = jQuery(window).scrollTop();	
+    if(A > 400){
+        jQuery("#back").css("visibility","visible");
+    }else{
+        jQuery("#back").css("visibility","hidden");
+    }
+    });
+setTimeout(function(){ 
+jQuery(".div1").show();
+jQuery("#zxclose").show();
+}, 5000);
+jQuery("#zxclose").click(function(){
+jQuery(".div1").hide();
+jQuery(this).hide();
+})
+jQuery("#back").click(function(){
+jQuery("html,body").animate(
+{
+"scrollTop":0
+},400);	
+})
+jQuery(".nav_right ul li").mouseenter(function(){
+jQuery(this).find("span").css("visibility","visible").animate({ 
+    right: "145px"
+ 	 },80);
+})
+jQuery(".nav_right ul li").mouseleave(function(){
+jQuery(this).find("span").css({"visibility":"hidden","right":"0"});
+})
+
+})
+</script>  
+<div id="Quater_headtop">
+  <div class="wp cl">
+        </div>
+  <div id="Quater_bar" class="cl"> 
+<div class="topbar">
+<div class="inner">
+<div class="top_l">
+<p><a href="javascript:;">传智播客旗下技术交流社区</a><a href="http://bbs.itheima.com/bj" rel="nofollow">北京校区</a>
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+jQuery('#mn_N6666').html('<a href="/bj" hidefocus="true" rel="nofollow">首页</a>');
+jQuery('#gf_logourl').attr('href','/bj');
+ });
+</script>
+  <!--92810专员给各处校区添加nofollow标签,此类页面无任何页面变化、禁止此类页面参与页面权重分散，后期可以根据解禁-->
+</p>				
+</div>
+<div class="top_r">
+<p class="slogan"> <a href="http://www.itcast.cn/" target="_blank">传智播客官网</a><a href="http://www.itheima.com/" target="_blank">黑马程序员官网</a>	
+
+</p>	
+</div>				
+</div>
+</div>
+    <div class="wp cl">
+      <!-- 站点LOGO -->
+      <div class="hd_logo"> 
+          <h2><a href="http://www.itheima.com/" target="_blank"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/logo.png" alt="黑马程序员论坛" data-bd-imgshare-binded="1"></a></h2>
+      </div>
+  <!--92810专员此处添加alt描述-->
+      <!-- 导航 -->
+      <div class="nav">
+        <ul>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+                    <li id="mn_Ned85" onmouseover="showMenu({&#39;ctrlid&#39;:this.id,&#39;ctrlclass&#39;:&#39;hover&#39;,&#39;duration&#39;:2})"><a href="javascript:;" hidefocus="true">[切换校区]</a>
+          </li>
+           
+           
+                    <li id="mn_N6666"><a href="http://bbs.itheima.com/bj" hidefocus="true" rel="nofollow">首页</a></li>
+           
+           
+           
+           
+                    <li id="mn_N1516"><a href="http://bbs.itheima.com/forum-447-1.html?ltdl" hidefocus="true" target="_blank">免费资源</a>
+          </li>
+           
+           
+                    <li id="mn_N3f35"><a href="http://bbs.itheima.com/forum-450-1.html?dl" hidefocus="true" target="_blank">学习路线图</a>
+          </li>
+           
+           
+                    <li id="mn_N1c1f"><a href="http://bbs.itheima.com/forum-448-1.html?ltd2" hidefocus="true" target="_blank">技术交流</a>
+          </li>
+           
+           
+           
+           
+                    <li id="mn_N6be6"><a href="http://bbs.itheima.com/forum-393-1.html" hidefocus="true" target="_blank">最新活动</a>
+          </li>
+           
+           
+                    <li id="mn_Ne30e"><a href="http://bbs.itheima.com/plugin.php?id=auction" hidefocus="true" title="Auction" target="_blank">礼品兑换<span>Auction</span></a>
+          </li>
+           
+           
+           
+           
+           
+                  </ul>
+         
+      </div>
+      
+      <!-- 用户信息 --> 
+            <div class="Quater_user" style="width: 88px; margin-left: 20px; line-height: 80px; font-size: 14px;">
+       <ul>
+              <li class="z"><a href="http://bbs.itheima.com/member.php?mod=logging&amp;action=login" rel="nofollow"><i></i>登录</a></li>
+              <span class="pipe z" style="margin: 0 12px; color: #e6e6e6;">|</span>
+              <li class="z"><a href="http://bbs.itheima.com/member.php?mod=gfreg" rel="nofollow"><i></i>注册</a></li>
+  <!--92810专员此处添加登陆注册两个链接nofollow标签-->
+       </ul>
+      </div>
+      <div style="display:none"><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/logging.js.下载" type="text/javascript"></script>
+<form method="post" autocomplete="off" id="lsform" action="http://bbs.itheima.com/member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;infloat=yes&amp;lssubmit=yes" onsubmit="pwmd5(&#39;ls_password&#39;);return lsSubmit();">
+<div class="fastlg cl">
+<span id="return_ls" style="display:none"></span>
+<div class="y pns">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td><label for="ls_username">帐号</label></td>
+<td><input type="text" name="username" id="ls_username" class="px vm xg1" value="UID/用户名/Email" onfocus="if(this.value == &#39;UID/用户名/Email&#39;){this.value = &#39;&#39;;this.className = &#39;px vm&#39;;}" onblur="if(this.value == &#39;&#39;){this.value = &#39;UID/用户名/Email&#39;;this.className = &#39;px vm xg1&#39;;}" tabindex="901"></td>
+<td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903">自动登录</label></td>
+<td>&nbsp;<a href="javascript:;" onclick="showWindow(&#39;login&#39;, &#39;member.php?mod=logging&amp;action=login&amp;viewlostpw=1&#39;)">找回密码</a></td>
+</tr>
+<tr>
+<td><label for="ls_password">密码</label></td>
+<td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902"></td>
+<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+<td>&nbsp;<a href="http://bbs.itheima.com/member.php?mod=gfreg" class="xi2 xw1">加入黑马</a></td>
+</tr>
+</tbody></table>
+<input type="hidden" name="quickforward" value="yes">
+<input type="hidden" name="handlekey" value="ls">
+</div>
+
+<div class="fastlg_fm y" style="margin-right: 10px; padding-right: 10px">
+<p><a href="http://bbs.itheima.com/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dviewthread%26tid%3D426624%26highlight%3Ddjango&amp;statfrom=login_simple"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/qq_login.gif" class="vm" alt="QQ登录" data-bd-imgshare-binded="1"></a></p>
+<p class="hm xg1" style="padding-top: 2px;">只需一步，快速开始</p>
+</div>
+</div>
+</form>
+
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/md5.js.下载" type="text/javascript" reload="1"></script>
+</div>
+            <div href="javascript:void(0)" target="_blank" class="headerbtn header_search newbtn" title="搜索">
+      </div>
+      <div style="display: none;" class="Quater_search"> 
+       <div class="wp cl" style="position: relative; z-index: 1000;">
+          <div id="scbar" class="scbar_narrow cl">
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($(&#39;scbar_txt&#39;))" action="http://bbs.itheima.com/search.php?searchsubmit=yes" target="_blank">
+<input type="hidden" name="mod" id="scbar_mod" value="forum">
+<input type="hidden" name="formhash" value="a6aa3a36">
+<input type="hidden" name="srchtype" value="title">
+<input type="hidden" name="srhfid" value="425">
+<input type="hidden" name="srhlocality" value="forum::viewthread">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>   
+<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">帖子</a></td>                         
+<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech="" speech="" class=" xg1 xg1" placeholder="请输入搜索内容"></td>
+</tr>
+</tbody></table>
+</form>
+</div>
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="curforum" fid="425">本版</a></li><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+<script type="text/javascript">
+initSearchmenu('scbar', '');
+</script>
+          <i class="close-search headericon-close"></i>
+           
+<!-- 搜索筛选 -->
+<ul id="scbar_type_menu" class="p_pop" style="display: none;">
+  <li><a href="javascript:;" rel="curforum" fid="425">本版</a></li><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+<script type="text/javascript">
+initSearchmenu('scbar', '');
+</script> 
+       </div>
+      </div>
+      <div class="global-search-mask" style="display: none; background-color: rgba(0, 0, 0, 0.4); width: 100%; height: 100%; position: fixed; top: 61px; left: 0px; z-index: 300;"></div>
+
+    </div>
+  </div>
+  <div class="fm_line"></div>
+</div><script type="text/javascript" charset="UTF-8" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/online"></script>
+<div class="mus_box cl">
+  <div id="mus" class="wp cl"> 
+     
+     
+        <ul class="cl " id="snav_mn_userapp" style="display:none">
+          </ul>
+     
+     
+     
+  </div>
+</div>
+
+ 
+ 
+ <div id="qmenu_menu" class="p_pop blk" style="display: none;">
+<div class="ptm pbw hm">
+请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br>没有帐号？<a href="http://bbs.itheima.com/member.php?mod=gfreg" class="xi2 xw1">加入黑马</a>
+</div>
+</div> 
+ 
+
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none">
+   
+    <li><a href="http://bbs.itheima.com/plugin.php?id=dsu_paulsign:sign" id="mn_plink_sign">每日签到</a></li>
+   
+  </ul>
+ 
+<!-- 二级导航 -->
+<div class="sub_nav"> <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><ul class="p_pop h_pop" id="mn_Ned85_menu" style="display: none"><li><a href="http://bbs.itheima.com/bj" hidefocus="true">北京校区</a></li><li><a href="http://bbs.itheima.com/sh" hidefocus="true">上海校区</a></li><li><a href="http://bbs.itheima.com/gz" hidefocus="true">广州校区</a></li><li><a href="http://bbs.itheima.com/sz" hidefocus="true">深圳校区</a></li><li><a href="http://bbs.itheima.com/wh" hidefocus="true">武汉校区</a></li><li><a href="http://bbs.itheima.com/zz" hidefocus="true">郑州校区</a></li><li><a href="http://bbs.itheima.com/xa" hidefocus="true">西安校区</a></li><li><a href="http://bbs.itheima.com/cs" hidefocus="true">长沙校区</a></li><li><a href="http://bbs.itheima.com/jn" hidefocus="true">济南校区</a></li><li><a href="http://bbs.itheima.com/cq" hidefocus="true">重庆校区</a></li><li><a href="http://bbs.itheima.com/nj" hidefocus="true">南京校区</a></li><li><a href="http://bbs.itheima.com/hz" hidefocus="true">杭州校区</a></li><li><a href="http://bbs.itheima.com/sjz" hidefocus="true">石家庄校区</a></li><li><a href="http://bbs.itheima.com/cd" hidefocus="true">成都校区</a></li><li><a href="http://bbs.itheima.com/hf" hidefocus="true">合肥校区</a></li><li><a href="http://bbs.itheima.com/ty" hidefocus="true">太原校区</a></li><li><a href="http://bbs.itheima.com/xm" hidefocus="true">厦门校区</a></li><li><a href="http://bbs.itheima.com/sy" hidefocus="true">沈阳校区</a></li><li><a href="http://bbs.itheima.com/tj" hidefocus="true">天津校区</a></li></ul> </div>
+
+
+<!-- 用户菜单 -->
+<ul class="sub_menu" id="m_menu" style="display: none;">
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/home.php?mod=space&amp;do=friend" style="background-image:url(http://bbs.itheima.com/static/image/feed/friend_b.png) !important">好友</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/forum.php?mod=guide&amp;view=my" style="background-image:url(http://bbs.itheima.com/static/image/feed/thread_b.png) !important">帖子</a></li>
+   
+   
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/home.php?mod=space&amp;do=favorite&amp;view=me" style="background-image:url(http://bbs.itheima.com/static/image/feed/favorite_b.png) !important">收藏</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/home.php?mod=medal" style="background-image:url(http://bbs.itheima.com/static/image/feed/medal_b.png) !important">勋章</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/home.php?mod=task" style="background-image:url(http://bbs.itheima.com/static/image/feed/task_b.png) !important">任务</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/forum.php?mod=collection&amp;op=my" style="background-image:url(http://bbs.itheima.com/static/image/feed/collection_b.png) !important">淘帖</a></li>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/home.php?mod=follow" style="background-image:url(http://bbs.itheima.com/static/image/feed/follow_b.png) !important">广播</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/forum.php?mod=guide" style="background-image:url(http://bbs.itheima.com/static/image/feed/guide_b.png) !important">导读</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/misc.php?mod=ranklist" style="background-image:url(http://bbs.itheima.com/static/image/feed/ranklist_b.png) !important">排行榜</a></li>
+   
+   
+    <li style="display: none;"><a href="http://bbs.itheima.com/forum.php?mod=forumdisplay&amp;fid=394&amp;filter=typeid&amp;typeid=2288" target="_blank" style="background-image:url(http://bbs.itheima.com/data/attachment/common/cf/095621oqt9r1i9rcbgcjq4.png?dLRdQj) !important">日记</a></li>
+   
+    <li><a href="http://bbs.itheima.com/home.php?mod=spacecp">设置</a></li>
+   
+    <li><a href="http://bbs.itheima.com/home.php?mod=space&amp;do=favorite&amp;view=me" rel="nofollow">我的收藏</a></li><!--92810专员此处添加nofollow---->
+   
+    <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li><a href="http://bbs.itheima.com/member.php?mod=logging&amp;action=logout&amp;formhash=a6aa3a36">退出</a></li>
+</ul>
+<ul class="sub_menu" id="l_menu" style="display: none;">
+  
+  <!-- 第三方登录 -->
+  <li class="user_list app_login"><a href="http://bbs.itheima.com/connect.php?mod=login&amp;op=init&amp;referer=forum.php&amp;statfrom=login" rel="nofollow"><i class="i_qq"></i>腾讯QQ</a></li>
+  <li class="user_list app_login"><a href="http://bbs.itheima.com/plugin.php?id=wechat:login" rel="nofollow"><i class="i_wb"></i>微信登录</a></li>
+</ul><style type="text/css">
+@import url('http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83');
+@import url('http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/styles/shCoreDefault.css?ver=3.0.83');
+@import url('http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83');
+.syntaxhighlighter,
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+font-size: 12px !important; /* Set the font size in pixels */
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */
+}
+.syntaxhighlighter table caption {
+/* For Title(Caption) */
+font-size: 14px !important; /* Set the font size in pixels */
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */
+}
+.syntaxhighlighter.nogutter td.code .line {
+/* Set the left padding space when no-gutter in ver. 3.0 */
+padding-left: 3px !important;
+}
+
+.syntaxhighlighter .lines {
+	padding: 5px 0px 5px 0px !important;
+}
+.syntaxhighlighter .line .number {
+	padding: 5px 5px 5px 0 !important;
+}
+.syntaxhighlighter .line .content {
+	padding: 5px 0px 5px 10px !important;
+}
+
+/* For gutter */
+.syntaxhighlighter table td.code {
+width:auto !important;
+}
+.syntaxhighlighter table td.gutter .line {
+padding: 0 0.5em !important;
+}
+.syntaxhighlighter .gutter {
+width: 40px !important;
+}
+
+.syntaxhighlighter table td.gutter .line {
+	padding: 5px 5px 5px 0 !important;
+}
+.syntaxhighlighter table td.code .line {
+	padding: 5px 0px 5px 10px !important;
+}
+
+.syntaxhighlighter {
+/* For Chrome/Safari(WebKit) */
+/* Hide the superfluous vertical scrollbar in ver. 3.0 */
+/*overflow-y: hidden !important;*/
+padding: 1px !important;
+}
+
+.syntaxhighlighter {
+	width: 99.7% !important;
+	max-height: 600px !important;
+	height:expression(this.scrollHeight > 600 ? "600px" : "auto");
+	overflow-y: auto;
+}
+
+/* For Title(Caption) */
+font-size: 10px !important; /* Set the font size in pixels */
+font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */
+}
+</style>
+            <link rel="stylesheet" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/oculus.css">
+            <link rel="stylesheet" href="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/nc.css" disabled="">
+            <script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/nc.js.下载"></script>
+            <script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/oculus_nc.js.下载"></script>
+            <div id="nc-float" style="display:none;">
+                <div class="nc-f-head">
+                    <img class="nc-f-icon" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/TB1_3FrKVXXXXbdXXXXXXXXXXXX-129-128.png" alt="" height="20" width="20" data-bd-imgshare-binded="1">
+                    <span class="nc-f-title">安全验证</span>
+                    <a class="close" href="http://bbs.itheima.com/#"><i class="nc_iconfont"></i></a>
+                </div>
+                <div class="nc-f-body" id="oculus-nc-f-body">
+                <div class="nc-f-des">请完成以下验证码</div>
+                    <div id="nocaptcha"></div>
+                </div>
+            </div> 
+
+<div id="wp" class="wp time_wp cl">
+<script type="text/javascript">var fid = parseInt('425'), tid = parseInt('426624');</script>
+
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/forum_viewthread.js.下载" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '720';var aimgcount = new Array();</script>
+
+<style id="diy_style" type="text/css"></style>
+<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+<div id="pt" class="bm cl" style="margin:0">
+                <div class="z"><a href="http://bbs.itheima.com/">论坛首页</a> <em>›</em> <a href="http://bbs.itheima.com/forum.php?gid=176">学习交流</a> <em>›</em> <a href="http://bbs.itheima.com/forum-448-1.html">技术交流</a> <em>›</em> <a href="http://bbs.itheima.com/forum-425-1.html">Python+人工智能技术交流</a> <em>›</em> <a href="http://bbs.itheima.com/thread-426624-1-1.html">正文</a> </div><!--此处为蜘蛛与访客可见的伪静态92810专员修改查看内容为正文 -->
+                <!--92810专员将此处的forum.php修改为绝对路径http://bbs.itheima.com/   社区首页写死成为论坛首页-->
+                <div class="y" style="display: none;"> 
+                  <a href="http://bbs.itheima.com/forum.php?mod=viewthread&amp;action=printable&amp;tid=426624" title="打印" target="_blank"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/print.png" alt="打印" class="vm" data-bd-imgshare-binded="1"></a> 
+                   
+                  <a href="http://bbs.itheima.com/forum.php?mod=redirect&amp;goto=nextoldset&amp;tid=426624" title="上一主题"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/thread-prev.png" alt="上一主题" class="vm" data-bd-imgshare-binded="1"></a> <a href="http://bbs.itheima.com/forum.php?mod=redirect&amp;goto=nextnewset&amp;tid=426624" title="下一主题"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/thread-next.png" alt="下一主题" class="vm" data-bd-imgshare-binded="1"></a> </div>
+                 
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="wp ct2 cl">
+
+
+<div class="cl">
+
+<div class="sd">
+                     <div class="itofeedback cl">
+        <a class="bluebigbutton" onclick="showWindow(&#39;newthread&#39;, &#39;forum.php?mod=post&amp;action=newthread&amp;fid=425&#39;)" href="javascript:;" title="发新帖" rel="nofollow">发帖</a>
+        <a href="http://bbs.itheima.com/plugin.php?id=dsu_paulsign:sign" target="_blank" class="greenbigbutton" title="签到" style="margin-right: 0;" rel="nofollow">签到</a>
+     </div>
+   	<div class="quater_author_info cl">
+        <div class="quater_author_info_1 cl">   
+
+                <a href="http://bbs.itheima.com/home.php?mod=space&amp;uid=468765" target="_blank" class="toux" rel="nofollow"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/65_avatar_middle.jpg" onerror="this.onerror=null;this.src=&#39;http://bbs.itheima.com/uc_server/images/noavatar_middle.gif&#39;" data-bd-imgshare-binded="1"></a>
+                                                                        <p><a href="http://bbs.itheima.com/home.php?mod=space&amp;uid=468765" target="_blank" style="color: #000000">python_shenshou</a>  </p>
+                    <p style="margin-top: 3px;"><a href="http://bbs.itheima.com/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=11" target="_blank" style="color: #FF0000;" rel="nofollow"><font color="#000000">初级黑马</font></a></p>
+                                                                    
+                <div class="time_thread_stat cl">
+ <ul>
+                	<li><a>67</a><p>黑马币</p></li>
+                    <li><a>25</a><p>帖子</p></li>
+                    <li style="border-right: 0;"><a>0</a><p>精华</p></li>
+ </ul>
+                </div>
+                
+                                        </div>
+        <div class="quater_author_info_3 cl" style="background: #F9F9F9;">
+            <div class="s_timeline s_timeline2 cl" style="margin: 0 20px 20px 20px;">
+<ul style="border-top: 0;">
+                <li><i><span></span></i><a href="http://bbs.itheima.com/thread-426625-1-1.html" target="_blank">关于Django项目《美多商城》的全部流程(下)--从购物车到部署</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-426623-1-1.html" target="_blank">关于Flask项目《新经资讯》的全部流程----从立项到部署</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-422216-1-1.html" target="_blank">[学习记录贴]Django中的session</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-412628-1-1.html" target="_blank">进入就业班的学习感悟</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-424157-1-1.html" target="_blank">[致已经过去的国庆假期]来黑马最长的一次假期我都在干嘛</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-422220-1-1.html" target="_blank">[学习记录]Redis个人整理</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-422219-1-1.html" target="_blank">[学习记录]  Git个人整理</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-422215-1-1.html" target="_blank">[学习记录贴]Django中的cookie</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-415736-1-1.html" target="_blank">Python高级阶段考试总结</a><p></p></li>
+<li><i><span></span></i><a href="http://bbs.itheima.com/thread-419366-1-1.html" target="_blank">Redis在Ubuntu上的安装步骤</a><p></p></li>
+</ul>
+</div>
+        </div>
+    </div>
+    <!--[diy=diy_right_1]--><div id="diy_right_1" class="area"></div><!--[/diy]-->
+    <!--[diy=diy_right_2]--><div id="diy_right_2" class="area"></div><!--[/diy]-->
+</div>
+<div class="mn">
+ <div class="box cl" style="padding: 25px 25px 10px 25px; background: #FFFFFF;">
+    <div class="zprrtt cl">
+  <div class="moquu_rrskzx">
+    <div class="moquu_date">
+      <div class="moquu_rrbt cl">
+        <div class="css cl">
+          <div class="moquu_mz cl">
+                <h1>
+                                    <a href="http://bbs.itheima.com/forum.php?mod=forumdisplay&amp;fid=425&amp;filter=typeid&amp;typeid=792" class="colorlink">[学习交流]</a>
+                                	<a href="http://bbs.itheima.com/thread-426624-1-1.html" onclick="return copyThreadUrl(this, &#39;黑马程序员技术交流社区&#39;)">关于Django项目《美多商城》的全部流程(上)--从立项到商品</a>
+    	                    
+    </h1>
+              </div>
+          <div class="moquu_small">
+            <p><a href="http://bbs.itheima.com/vip" class=""></a>©                                                                         <a href="http://bbs.itheima.com/home.php?mod=space&amp;uid=468765" target="_blank" style="color: #000000">python_shenshou</a>                 	<a href="http://bbs.itheima.com/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=11" target="_blank"><font color="#000000">初级黑马</font></a>
+                                                    &nbsp;&nbsp;/&nbsp;&nbsp;2018-10-28 19:11&nbsp;&nbsp;/&nbsp;&nbsp;1510 人查看&nbsp;&nbsp;/&nbsp;&nbsp;0 人回复&nbsp;&nbsp;/&nbsp;&nbsp;<span>
+                <a href="http://bbs.itheima.com/home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=426624&amp;formhash=a6aa3a36" rel="nofollow" id="k_favorite" onclick="showWindow(this.id, this.href, &#39;get&#39;, 0);" onmouseover="this.title = $(&#39;favoritenumber&#39;).innerHTML + &#39; 人收藏&#39;" title="收藏本帖" class="k_favorite" style="padding-right: 10px;"><i></i>1 人收藏</a>
+                <a href="javascript:void(0)" class="cc1" title="转载请遵从国际CC协议">转载请遵从CC协议</a>
+                <a href="javascript:void(0)" class="cc2" title="禁止商业使用本文">禁止商业使用本文</a></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div id="postlist" class="pl bm">
+        <div id="post_3755916">
+<table id="pid3755916" class="plhin" summary="pid3755916" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="plc" style="width:100%"><div class="pct"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+ 
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td class="t_f" id="postmessage_3755916">
+<strong>一.立项</strong>1.在码云上创建项目目录<br>
+2.使用ssh方式把项目克隆下来<br>
+&nbsp; &nbsp; 1)生成密钥对ssh-keygen -t rsa<br>
+&nbsp; &nbsp; 2)存放在家目录下的 .ssh 目录下<br>
+&nbsp; &nbsp; 3)原来有的话,把原来的删除<br>
+&nbsp; &nbsp; 4)复制生成好的公钥<br>
+&nbsp; &nbsp; 5)在码云上的ssh公钥中添加<br>
+&nbsp; &nbsp; 6)ssh方式复制项目<br>
+&nbsp; &nbsp; 7)在本地目录下git clone 项目克隆地址<br>
+3.创建分支<br>
+4.创建新的目录存放前端资源<br>
+5.push到码云(git push origin dev:dev)<br>
+6.在码云上发起合并请求(pull Requests)<br>
+​<br>
+7.安装静态文件服务器live-server(node.js提供的前端工具,必须在node.js8以上的版本才能运行,和python无关)<br>
+&nbsp; &nbsp; 1)安装node.js版本控制工具--&gt;curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh" target="_blank">https://raw.githubusercontent.co ... v0.33.11/install.sh</a> | bash<br>
+&nbsp; &nbsp; 2)重新进入终端,下载最新的node.js--&gt;nvm install node<br>
+&nbsp; &nbsp; 3)安装live-server--&gt;npm install -g live-server<br>
+&nbsp; &nbsp; 4)使用live-server--&gt;在静态文件目录front_end_pc下执行:live-server<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+8.创建虚拟环境: mkvirtualenv -p python3 meiduo_mall<br>
+9.安装工具包:<br>
+&nbsp; &nbsp; <strong><font color="#FF0000">django</font></strong>==1.11.11<br>
+&nbsp; &nbsp; djangorestframework<br>
+&nbsp; &nbsp; pymysql<br>
+10.创建后端工程目录:django-admin startproject 工程名<br>
+&nbsp; &nbsp; <br>
+11.调整工程目录<br>
+&nbsp; &nbsp; 1)添加docs目录(记录文档)<br>
+&nbsp; &nbsp; 2)logs目录(记录日志)<br>
+&nbsp; &nbsp; 3)scripts目录(放一些脚本文件的)<br>
+12.调整主要应用程序目录<br>
+&nbsp; &nbsp; 1)添加apps包(应用模块)<br>
+&nbsp; &nbsp; 2)settings包(配置文件)<br>
+&nbsp; &nbsp; 3)libs包(第三方库)<br>
+&nbsp; &nbsp; 4)utils包(工具库)<br>
+&nbsp; &nbsp; 5)在settings下创建dev(开发)时的配置文件,删除主应用程序目录的配置文件<br>
+​<br>
+13.apps下创建应用--&gt;python ../../manage.py startapp users<br>
+<strong>二.配置</strong>1.配置文件中添加使用配置文件的模块<br>
+&nbsp; &nbsp; 1)import sys<br>
+&nbsp; &nbsp; 2)sys.path.insert(0,os.path.join(BASE_DIR,"apps"))<br>
+&nbsp; &nbsp; 3)直接按照原来的方式添加app配置<br>
+&nbsp; &nbsp; 4)修改manage.py中使用到配置文件的地方<br>
+​<br>
+2.创建数据库<br>
+3.为数据库创建新的账户专门操作美多商城数据库<br>
+&nbsp; &nbsp; create user meiduo identified by 'meiduo'; <br>
+&nbsp; &nbsp; grant all on meiduo_mall.* to 'meiduo'@'%'; <br>
+&nbsp; &nbsp; flush privileges;<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; 第一句：创建用户账号 meiduo, 密码 meiduo (由identified by 指明)<br>
+&nbsp; &nbsp; 第二句：授权meiduo_mall数据库下的所有表（meiduo_mall.*）的所有权限（all）给用户meiduo在以任何ip访问数据库的时候（'meiduo'@'%'）<br>
+&nbsp; &nbsp; 第三句：刷新生效用户权限<br>
+&nbsp; &nbsp; <br>
+4.配置数据库<br>
+&nbsp; &nbsp; 1)DATABASES = {<br>
+&nbsp; &nbsp; 'default': {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'ENGINE': 'django.db.backends.mysql',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'HOST': '127.0.0.1',&nbsp;&nbsp;# 数据库主机<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'PORT': 3306,&nbsp;&nbsp;# 数据库端口<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'USER': 'meiduo',&nbsp;&nbsp;# 数据库用户名<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'PASSWORD': 'meiduo',&nbsp;&nbsp;# 数据库用户密码<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'NAME': 'meiduo_mall'&nbsp;&nbsp;# 数据库名字<br>
+&nbsp; &nbsp; }<br>
+}<br>
+&nbsp; &nbsp; 2)记得在meiduo_mall/meiduo_mall/__init__.py(或者settings/__init__.py)文件中添加:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;import pymysql<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pymysql.install_as_MySQLdb()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+5.安装redis并配置(给admin站点使用的session)<br>
+&nbsp; &nbsp; 1)pip install django-redis<br>
+&nbsp; &nbsp; 2)配置文件中配置:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;CACHES = {<br>
+&nbsp; &nbsp; "default": {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"BACKEND": "django_redis.cache.RedisCache",<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"LOCATION": "redis://10.211.55.5:6379/0",<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"OPTIONS": {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;"CLIENT_CLASS": "django_redis.client.DefaultClient",<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+&nbsp; &nbsp; },<br>
+&nbsp; &nbsp; "session": {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"BACKEND": "django_redis.cache.RedisCache",<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"LOCATION": "redis://10.211.55.5:6379/1",<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"OPTIONS": {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;"CLIENT_CLASS": "django_redis.client.DefaultClient",<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+&nbsp; &nbsp; }<br>
+}<br>
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"<br>
+SESSION_CACHE_ALIAS = "session"<br>
+​<br>
+6.配置本地化语言和时间<br>
+7.配置日志:<br>
+&nbsp; &nbsp; LOGGING = {<br>
+&nbsp; &nbsp; 'version': 1,<br>
+&nbsp; &nbsp; 'disable_existing_loggers': False,&nbsp;&nbsp;# 是否禁用已经存在的日志器<br>
+&nbsp; &nbsp; 'formatters': {&nbsp;&nbsp;# 日志信息显示的格式<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'verbose': {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'format': '%(levelname)s %(asctime)s %(module)s %(lineno)d %(message)s'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;},<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'simple': {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'format': '%(levelname)s %(module)s %(lineno)d %(message)s'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;},<br>
+&nbsp; &nbsp; },<br>
+&nbsp; &nbsp; 'filters': {&nbsp;&nbsp;# 对日志进行过滤<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'require_debug_true': {&nbsp;&nbsp;# django在debug模式下才输出日志<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'()': 'django.utils.log.RequireDebugTrue',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;},<br>
+&nbsp; &nbsp; },<br>
+&nbsp; &nbsp; 'handlers': {&nbsp;&nbsp;# 日志处理方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'console': {&nbsp;&nbsp;# 向终端中输出日志<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'level': 'DEBUG',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'filters': ['require_debug_true'],<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'class': 'logging.StreamHandler',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'formatter': 'simple'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;},<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'file': {&nbsp;&nbsp;# 向文件中输出日志<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'level': 'INFO',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'class': 'logging.handlers.RotatingFileHandler',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'filename': os.path.join(os.path.dirname(BASE_DIR), "logs/meiduo.log"),&nbsp;&nbsp;# 日志文件的位置<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'maxBytes': 300 * 1024 * 1024,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'backupCount': 10,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'formatter': 'verbose'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;},<br>
+&nbsp; &nbsp; },<br>
+&nbsp; &nbsp; 'loggers': {&nbsp;&nbsp;# 日志器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'django': {&nbsp;&nbsp;# 定义了一个名为django的日志器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'handlers': ['console', 'file'],&nbsp;&nbsp;# 可以同时向终端与文件中输出日志<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'propagate': True,&nbsp;&nbsp;# 是否继续传递日志信息<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'level': 'INFO',&nbsp;&nbsp;# 日志器接收的最低日志级别<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;},<br>
+&nbsp; &nbsp; }<br>
+}<br>
+&nbsp; &nbsp; <br>
+8.异常处理(修改Django REST framework的默认异常处理方法(默认处理了序列化器抛出的异常)，补充处理数据库异常和Redis异常)<br>
+&nbsp; &nbsp; 1)utils下创建exceptions.py<br>
+&nbsp; &nbsp; 2)<br>
+&nbsp; &nbsp; from rest_framework.views import exception_handler as drf_exception_handler<br>
+&nbsp; &nbsp; import logging<br>
+&nbsp; &nbsp; from django.db import DatabaseError<br>
+&nbsp; &nbsp; from redis.exceptions import RedisError<br>
+&nbsp; &nbsp; from rest_framework.response import Response<br>
+&nbsp; &nbsp; from rest_framework import status<br>
+​<br>
+&nbsp; &nbsp; # 获取在配置文件中定义的logger，用来记录日志<br>
+&nbsp; &nbsp; logger = logging.getLogger('django')<br>
+​<br>
+&nbsp; &nbsp; def exception_handler(exc, context):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"""<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;自定义异常处理<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:param exc: 异常<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:param context: 抛出异常的上下文<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:return: Response响应对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"""<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;# 调用drf框架原生的异常处理方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;response = drf_exception_handler(exc, context)<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;if response is None:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;view = context['view']<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if isinstance(exc, DatabaseError) or isinstance(exc, RedisError):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 数据库异常<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; logger.error('[%s] %s' % (view, exc))<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; response = Response({'message': '服务器内部错误'}, status=status.HTTP_507_INSUFFICIENT_STORAGE)<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;return response<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3)添加到配置文件:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;REST_FRAMEWORK = {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;# 异常处理<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'EXCEPTION_HANDLER': 'meiduo_mall.utils.exceptions.exception_handler',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+<strong>三.登录注册模块</strong>1.使用django认证系统中的用户模型类创建自定义的用户模型类<br>
+&nbsp; &nbsp; from django.contrib.auth.models import AbstractUser<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; class User(AbstractUser):<br>
+&nbsp; &nbsp; """用户模型类"""<br>
+&nbsp; &nbsp; mobile = models.CharField(max_length=11, unique=True, verbose_name='手机号')<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;class Meta:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;db_table = 'tb_users'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;verbose_name = '用户'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;verbose_name_plural = verbose_name<br>
+2.配置中指明自定义的用户模型类<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; <br>
+3.进行数据库迁移(第一次数据库迁移必须在配置了自定义的用户模型类之后)<br>
+&nbsp; &nbsp; python manage.py makemigrations<br>
+&nbsp; &nbsp; python manage.py migrate<br>
+&nbsp; &nbsp; <br>
+4.图片验证码<br>
+&nbsp; &nbsp; 1)分析,接口设计<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;接口设计思路:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;接口的请求方式，如GET 、POST 、PUT等<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;接口的URL路径定义<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;需要前端传递的数据及数据格式（如路径参数、查询字符串、请求体表单、JSON等）<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;返回给前端的数据及数据格式<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;用户注册中，需要实现的接口:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;图片验证码<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;短信验证码<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;用户名判断是否存在<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;手机号判断是否存在<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;注册保存用户数据<br>
+&nbsp; &nbsp; 2)创建新的应用:verifications<br>
+&nbsp; &nbsp; 3)注册到配置文件<br>
+&nbsp; &nbsp; 4)新建图片验证码类视图<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;接收参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;校验参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;生成验证码图像<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;保存真实值<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;返回图片<br>
+&nbsp; &nbsp; 5)把第三方生成验证码包放入libs下<br>
+&nbsp; &nbsp; 6)添加redis保存验证码的配置<br>
+&nbsp; &nbsp; 7)在verifications下创建constants存放常量<br>
+&nbsp; &nbsp; 8)添加url,然后在全局url中包含<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; <br>
+5.本地域名映射<br>
+&nbsp; &nbsp; 1)vim /etc/hosts<br>
+&nbsp; &nbsp; 2)在文件中增加两条信息<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;后端:127.0.0.1&nbsp; &nbsp;api.meiduo.site<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;前端:127.0.0.1&nbsp; &nbsp;<a href="http://www.meiduo.site/" target="_blank">www.meiduo.site</a><br>
+&nbsp; &nbsp; 3)在配置文件中为ALLOWED_HOSTS添加可访问的地址.ALLOWED_HOSTS = ['api.meiduo.site', '127.0.0.1', 'localhost', 'www.meiduo.site']<br>
+&nbsp; &nbsp; 4)在front_end_ps/js下新建host.js为前端保存后端域名,添加内容:var host='http://api.meiduo.site:8000'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+6.修改前端js代码<br>
+&nbsp; &nbsp; 1)在register.html导入host.js<br>
+&nbsp; &nbsp; 2)修改js代码<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;创建生成uuid函数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;创建获取图片验证码函数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;添加变量存储存储uuid<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;为图片验证码的src绑定一个变量,变量存储的是图片验证码的url(:src="")<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;js中添加存储图片验证码url的变量<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;添加全局的host变量<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;拼接图片验证码的url放入存储图片验证码的变量中<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;在js中的vue.js页面加载完就执行的方法中调用获取图片验证码函数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;在html为图片添加点击事件,调用获取图片验证码的函数(@click="")<br>
+​<br>
+7.短信验证码后端逻辑<br>
+&nbsp; &nbsp; 1)接口设计<br>
+&nbsp; &nbsp; 2)新建短信验证码类视图,GET请求,继承GenericAPIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;校验参数(由序列化器完成)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;生成短信验证码<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;保存短信验证码,发送记录<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;发送短信<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;返回<br>
+&nbsp; &nbsp; 3)添加序列化器验证参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;验证是否符合格式<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;添加校验方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;获取数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;查询真实的图片验证码,查询失败抛出异常<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;解码图片验证码,比较图片验证码,错误的话raise serializer.ValidationError("")<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;判断手机号是否在60s内(获取redis中的手机发送标志,如果有数据,说明发送过了,抛出异常)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;返回字典数据<br>
+&nbsp; &nbsp; 4)生成短信验证码(随机生成)<br>
+&nbsp; &nbsp; 5)保存短信验证码<br>
+&nbsp; &nbsp; 6)保存短信验证码的发送记录<br>
+&nbsp; &nbsp; 7)发送短信<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;导入云通讯到utils下<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;创建发送短信验证码的对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;设置短信的有效分钟数:expires = 短信验证码有效时间秒//60<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;传参(send_template_sms(手机号,[验证码,短信验证码有效分钟数],模板ID常量))<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;为发送短信验证码捕获异常,写入日志,返回结果<br>
+&nbsp; &nbsp; 8)添加路由<br>
+&nbsp; &nbsp; 9)为保存短信验证码补充redis管道<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;redis_conn = get_redis_connection('verify_codes')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pl = redis_conn.pipeline()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pl.setex("sms_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES, sms_code)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pl.setex("send_flag_%s" % mobile, constants.SEND_SMS_CODE_INTERVAL, 1)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pl.execute()<br>
+&nbsp; &nbsp; 10)序列化器中删除短信验证码(验证码输错或者输对都删除,即查询出来就从redis中删除)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;try:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;redis_conn.delete('img_%s' % image_code_id)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;except RedisError as e:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;logger.error(e)<br>
+&nbsp; &nbsp;&nbsp;&nbsp;11)添加前端代码<br>
+&nbsp; &nbsp; <br>
+8.CORS解决跨域请求<br>
+&nbsp; &nbsp; 1)安装扩展:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pip install django-cors-headers<br>
+&nbsp; &nbsp; 2)配置文件中APPS添加'corsheaders'<br>
+&nbsp; &nbsp; 3)在中间件中添加中间件配置,放在最上面:'corsheaders.middleware.CorsMiddleware'<br>
+&nbsp; &nbsp; 4)添加白名单配置<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;CORS_ORIGIN_WHITELIST = (<br>
+&nbsp; &nbsp; '127.0.0.1:8080',<br>
+&nbsp; &nbsp; 'localhost:8080',<br>
+&nbsp; &nbsp; 'www.meiduo.site:8080',<br>
+&nbsp; &nbsp; 'api.meiduo.site:8000'<br>
+)<br>
+CORS_ALLOW_CREDENTIALS = True&nbsp;&nbsp;# 允许携带cookie<br>
+​<br>
+9.创建celery包(在工程目录下):celery_tasks异步任务<br>
+&nbsp; &nbsp; 1)创建main.py(celert的启动模块)和config.py<br>
+&nbsp; &nbsp; 2)为短信验证码创建包(sms),在包下创建tasks.py(固定的名字)<br>
+&nbsp; &nbsp; 3)安装Celery扩展<br>
+&nbsp; &nbsp; 4)在main.py下导入Celery并创建celery应用:app = Celery("meiduo")<br>
+&nbsp; &nbsp; 5)在config.py中添加配置:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;broker_url = "redis://127.0.0.1/14"(沟通的桥梁信息,存储任务的队列)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;result_backend = "redis://127.0.0.1/15"(保存任务运行完之后的返回结果信息,比如函数的返回值,任务id,状态等)<br>
+&nbsp; &nbsp; 6)main下导入celery配置:app.config_from_object('celery_tasks.config')<br>
+&nbsp; &nbsp; 7)main下注册任务:app.autodiscover_tasks(['celery_tasks.sms'])<br>
+&nbsp; &nbsp; 8)把发送短信验证码的代码写在sms下的tasks.py下<br>
+&nbsp; &nbsp; 9)在sms下创建utils包,把短信验证码工具包放进去<br>
+&nbsp; &nbsp; 10)修改原来发送短信验证码的代码(一些用到的变量通过传参传入),把返回值去掉<br>
+&nbsp; &nbsp; 11)导入日志,添加django的日志配置文件.logger = logging.getLogger("django")<br>
+&nbsp; &nbsp; 12)在main.py中添加celery使用django配置的代码:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;import os<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;if not os.getenv('DJANGO_SETTINGS_MODULE'):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;os.environ['DJANGO_SETTINGS_MODULE'] = 'meiduo_mall.settings.dev'<br>
+&nbsp; &nbsp; 13)sms下的tasks.py下使用装饰器装饰发送短信验证码的方法:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;导入app:from celery_tasks.main import app<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;装饰器装饰:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;@app.task(name="send_sms_code")<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;def send_sms_code(mobile, sms_code, expires,temp_id):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; ...<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;使用的是应用名.task()的方式装饰,其中装饰器的参数name是为了指明任务的名字,在运行时可以知道调用了哪个任务运行<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp; 14)在需要使用到发送短信验证码的视图函数中调用发送短信验证码的方法并传参:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;导包:from celery_tasks.sms.tasks import send_sms_code<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;expires = constants.SMS_CODE_REDIS_EXPIRES//60<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;send_sms_code.delay(mobile, sms_code, expires,constants.SMS_CODE_TEMP_ID)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;return Response({'message':'OK'})<br>
+&nbsp; &nbsp; 15)启动celery(在 异步任务所在的目录下):celery -A celery_tasks.main worker&nbsp;&nbsp;-l info<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;-A代表一个应用,后面跟的是应用启动的文件路径<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;-l info 表示显示所有级别在info以上的worker日志信息<br>
+​<br>
+10.判断账号<br>
+&nbsp; &nbsp; 1)判断用户是否存在<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;users下定义类视图<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;获取指定用户名的数量<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;返回数据(用户名和数量)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;前端实现<br>
+&nbsp; &nbsp; 2)判断手机号是否存在<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;users下定义类视图<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;获取指定的手机号的数量<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;返回数据(手机号和数量)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;前端实现<br>
+11.用户注册<br>
+&nbsp; &nbsp; 1)在users应用下创建新的视图类(继承CreateAPIView)实现用户注册:(参数:username,password,password2,sms_code,mobile,allow)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;视图函数中使用序列化器类(CreateUserSerializer)<br>
+&nbsp; &nbsp; 2)实现序列化器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在users下新建serializers模块实现序列化器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;导入rest_framework的serializers<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;创建序列化器CreateUserSerializer,继承serializers.ModelSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;添加自定义字段(数据库模型类没有的字段)都设为校验时使用的字段(添加属性:write_only=True)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;声明序列化器类有哪些字段和映射哪个模型类:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;class Meta:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; model = User<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; fields = (所有需要显示的字段名,包括模型类里面的以及自定义的,此时校验和返回都是这些字段)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;使用extra_kwargs对字段指明额外的需求.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;对特定的字段进行校验(validate_字段名):包括mobile,allow.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;对多个字段同时进行校验(validate):判断两次密码和短信验证码<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;9&gt;重写保存方法(create),增加密码加密功能<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).移除数据库模型类不存在的属性(allow,sms_code,password2)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).调用父类的保存方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).调用django的认证系统加密密码,保存<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).返回user<br>
+&nbsp; &nbsp; 3)实现注册的前端js<br>
+​<br>
+12.使用JWT机制判断用户身份<br>
+&nbsp; &nbsp; 1)安装扩展:pip install djangorestframework-jwt<br>
+&nbsp; &nbsp; 2)在配置文件的REST_FRAMWORK中添加认证的配置:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'DEFAULT_AUTHENTICATION_CLASSES': (<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'rest_framework_jwt.authentication.JSONWebTokenAuthentication',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'rest_framework.authentication.SessionAuthentication',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'rest_framework.authentication.BasicAuthentication',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;)<br>
+&nbsp; &nbsp; 3)在配置文件中添加JWT的配置token的有效期:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;JWT_AUTH={<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+&nbsp; &nbsp; 4)在注册时的序列化创建了用户之后签发jwt的token(记录登录状态):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;导包:from rest_framwork_jwt.settings import api_settings <br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;签发JWT:&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;payload = jwt_payload_handler(user)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;token = jwt_encode_handler(payload)<br>
+&nbsp; &nbsp; 5)添加返回的字段token并且把生成的token存到这个字段:比如user.token = token<br>
+&nbsp; &nbsp; 6)前端保存token:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;sessionStorage浏览器关闭即失效<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;localStorage 长期有效<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在js中sessionStorage.clear()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;localStorage.clear()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;localStorage.token = response.data.token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;localStorage.user_id = response.data.user_id<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;localStorage.username = response.data.name<br>
+&nbsp; &nbsp; <br>
+13.登录:<br>
+&nbsp; &nbsp; 在users下的urls下添加登录签发JWT的视图<br>
+&nbsp; &nbsp; 1)导包:from rest_framework_jwt.views import obtain_jwt_token<br>
+&nbsp; &nbsp; 2)添加路由:url(r'^authorizations/$', obtain_jwt_token)<br>
+&nbsp; &nbsp; 3)在users/utils.py中创建jwt_response_payload_handler函数修改视图到的返回值.<br>
+&nbsp; &nbsp; 4)在配置中的JWT_AUTH中添加配置:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"JWT_RESPONSE_PAYLOAD_HANDLER":"users.utils.jwt_response_payload_handler"<br>
+&nbsp; &nbsp; 5)在users/utils.py下自定义一个类(UsernameMobileAuthBackend)继承自ModelBackend,重写django认证系统ModelBackend里面的authenticate(self,request,username=None,password=None,**kwargs)方法自定义用户名或者手机号认证(因为username可能是用户名,也可能是手机号)<br>
+&nbsp; &nbsp; 6)抽出一个根据账号来获取用户对象的方法(get_user_by_account(account))放在自定义类的外面<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;正则账号信息判断是否为手机号,根据手机号查询数据库获得用户对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;否则根据用户名查询数据库获得用户对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;捕获异常,因为是get查询数据库,不存在返回None,否则返回用户对象<br>
+&nbsp; &nbsp; 7)在重写的authenticate方法中调用获取用户对象的方法,传参为接收到的username,接收获取到的用户对象<br>
+&nbsp; &nbsp; 8)验证用户对象的密码,认证成功后返回用户对象:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;if user is not None and user.check_password(password):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;return user<br>
+&nbsp; &nbsp; 9)配置文件中添加认证方法的配置:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;AUTHENTICATION_BACKENDS=['users.utlis.UsernameMobileAuthBackend']<br>
+&nbsp; &nbsp; 10)修改前端代码<br>
+&nbsp; &nbsp;<br>
+​<br>
+14.QQ登录:<br>
+&nbsp; &nbsp; 1)注册成为QQ互联开发人员:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="http://wiki.connect.qq.com/%E6%88%90%E4%B8%BA%E5%BC%80%E5%8F%91%E8%80%85" target="_blank">http://wiki.connect.qq.com/%E6%8 ... 0%E5%8F%91%E8%80%85</a><br>
+&nbsp; &nbsp; 2)创建应用,获取项目对应与QQ互联的应用ID:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="http://wiki.connect.qq.com/__trashed-2" target="_blank">http://wiki.connect.qq.com/__trashed-2</a><br>
+&nbsp; &nbsp; 3)根据QQ登录开发文档进行开发:文档链接--&gt;http://wiki.connect.qq.com/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C_oauth2-0<br>
+&nbsp; &nbsp; 4)创建QQ登录模型基类(放到全局的应用的utils下)<br>
+&nbsp; &nbsp; 5)创建一个新的应用:oauth<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;添加到App配置中<br>
+&nbsp; &nbsp; 6)创建QQ登录模型类(继承自基类)(oauth/models.py下),并且进行数据库迁移<br>
+&nbsp; &nbsp; 7)第一个接口:oauth中创建类视图(继承APIView,get方式)返回QQ登录的网址:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;获取next参数.如果没有,返回主页:next="/"<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;拼接QQ登录的网址(调用拼接QQ登录网址的辅助工具类,传入参数:OAuthQQ(state=next))<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;返回(Response({'login_url':login_url}))<br>
+&nbsp; &nbsp; 8)oauth下创建utils.py,创建QQ认证辅助工具类(OAuthQQ)拼接QQ登录网址<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;定义方法拼接url(get_login_url)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;根据文档查看url以及需要发送的参数(client_id,redirect_uri,state),参数设置成字典数据类型<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;发送的参数在__init__下定义,因为每个对象的参数值不一样.创建对象时传入.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;在配置文件中设置QQ登录时的默认值,在不传参时就使用默认值(因为有些值是一样的,不需要改变,就可以使用默认值.)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;QQ_CLIENT_ID = '101474184'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;QQ_CLIENT_SECRET = 'c6ce949e04e12ecc909ae6a8b09b637c'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;QQ_REDIRECT_URI = 'http://www.meiduo.site:8080/oauth_callback.html'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;QQ_STATE = '/'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;通过form django.conf import settings 使用django的配置文件中的内容<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;使用urllib.parse 下的urlencode(字典名),将字典转换为url路径中的查询字符串,拼接到url后面(from urllib.parse import urlencode)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;返回url<br>
+&nbsp; &nbsp; 9)注册路由&amp;在总路由中包含,设置前缀(oauth)<br>
+&nbsp; &nbsp; 10)实现QQ登录前端,在login.js中增加qq登录的方法.请求成功获取到返回的QQ登录网址,跳转到QQ登录页面<br>
+&nbsp; &nbsp; 11)前端处理QQ_REDIRECT_URI设置的oauth_callback.html<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;创建oauth_callback.html<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;js中创建oauth_callback.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+&nbsp; &nbsp; 12)第二个接口:(get)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;创建新的类视图:QQAuthUserView(APIView),判断QQ登录的用户<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;获取code,如果不存在,返回信息<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;凭借code获取access_token:创建辅助工具类对象,调用get_access_token()方法,传参数为code<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).在QQ认证辅助工具类中添加获得access_token的方法get_access_token()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).添加url,设置参数(根据QQ互联文档)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).拼接url带上参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).使用urllib.request.urlopen(url,data=None)发送请求,获得返回响应<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).读取响应体数据:响应调用read()读取数据,数据解码decode()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).解析响应体数据:urllib.parse.parse_qs(数据),解析出来是个字典<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7).读取access_token.(在异常抛出之后)在一个字典中获取access_token,是一个列表,然后返回access_token[0]<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8).辅助类中捕获异常,记录日志,抛出异常:发送请求时开始捕获,解析完成后记录异常('获取access_token异常:%s'%e),并抛出异常自定义的异常OAuthQQAPIError.如果没有异常再进行读取access_token.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9).自定义一个异常:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.oauth下创建新的模块exception.py<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.创建自定义的异常类OAuthQQAPIError,继承自Exception.不实现,直接pass<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(10)在类视图中调用get_access_token()时捕获自定义的异常:OAuthQQAPIError<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(11).直接返回Response({'message': '访问QQ接口异常'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;凭借access_token获取openid<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).走到这一步说明access_token获取成功,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).调用QQ工具辅助类中的获取openid的方法(get_openid),参数为access_token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).根据QQ互联文档编写get_openid方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).和获得access的流程类似<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).得到的数据不同,解析openid的方式不一样<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).返回的数据为: callback( {"client_id":"YOUR_APPID","openid":"YOUR_OPENID"} )\n;字符串<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7).通过切片解析数据,转json字符串为字典,抛异常<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;根据openid查询数据库OAuthQQuser,捕获异常判断数据是否存在<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;如果数据不存在,处理openid并返回<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).调用QQ辅助类中定义生成access_token的方法(generate_save_user_token),参数为openid,返回access_token.(返回的这个access_token封装了openid)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).辅助工具类中实现generate_save_user_token方法.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).安装itsdangerous,使用itsdangerous生成access_token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).使用 itsdangerous模块下的TimedJSONWebSignatureSerializer 生成带有有效期的token,名字太长,可以起别名Serializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5)生成方式:定义序列化对象:serializer = Serializer(settings.SECRET_KEY, expires_in=constants.SAVE_QQ_USER_TOKEN_EXPIRES)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).oauth下新建constants模块,设置SAVE_QQ_USER_TOKEN_EXPIRES=10*60<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7).调用对象的dumps方法传入openid获得生成的token:token = serializer.dumps({'openid':openid})<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8).返回解码后的token:token.decode()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9).视图函数中返回access_token用于绑定用户的身份<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;如果数据存在,表示用户已经绑定过身份,签发JWT token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;返回JWT_token数据(用户id,用户名,签发的token)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;拼接路由<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;修改前端oauth_callback.js中的mounted方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).获取用户id,如果有,说明已经绑定,请求state中的url<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).如果没有,说明没有绑定,获得服务器返回的access_token,调用生成图片验证码的函数,显示绑定用户的表单.<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; 13)第三个接口:(绑定QQ身份)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在QQAuthUserView中定义post方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;获取数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;校验数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;判断用户是否存在,如果存在,绑定,创建OAuthQQUser数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;如果不存在,先创建User,再创建OAuthQQUser<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;签发JWT token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;上面的这套流程可以直接继承CreateAPIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;直接在视图函数中调用序列化器OAuthQQUserSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;添加序列化器模块,定义序列化器OAuthQQUserSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;实现OAuthQQUserSerializer:继承serializer.ModelSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).添加字段sms_code只反序列化,access_token只反序列化,token只序列化.抽出mobile字段(可序列化,可反序列化),因为模型类中的mobile设置了只能是唯一,这里需要抽出来,把只能是唯一的验证去掉,不抽出来在模型类中会抛出异常,那么后面的判断手机号是否在数据库中就没有办法判断了.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).Meta中指定模型类,指定显示字段fields = ('mobile','password','sms_code','access_token','id','username','token')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).为字段添加额外的条件:extra_kwargs={<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'username':{<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'read_only':True<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; },<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'password':{<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'write_only':True,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'min_length':8,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'max_length':20,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'error_messages':{<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'min_length':'仅允许8-20个字符的密码',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'max_length':'仅允许8-20个字符的密码'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; }<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).定义校验数据的方法validate.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).获取access_token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).校验access_token,在QQ辅助工具类中添加校验access_token的静态方法,使用的是itsdangerous模块,因为生成也是这个模块.返回校验后的openid<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7).validate中赋值openid:attrs['openid'] = openid<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8).校验短信验证码,失败抛出异常<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9).根据mobile获取user,捕获异常,不存在抛出异常,pass操作,没有异常则获取密码,验证码密码,调用user的密码认证系统:user.check_password(password),如果没有返回值,抛出验证错误异常,提示密码错误.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(10)密码验证通过则把user添加到序列化器的数据字典中:attrs['user'] = user<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(11).返回attrs<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(12).修改序列化器的create方法.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(13).获取user,openid,mobile,password<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(14).如果user不存在,在数据库中创建这个user,用户名为手机号,手机号也是手机号,密码为前端发送过来校验后的密码.调用的django认证系统的创建用户的方法create_user()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(15).绑定,创建OAuthQQUser数据:OAuthQQUser.objects.create(user=user,openid=openid)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(16).签发JWT token,和登录里面的一样的.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(17).返回user<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;11&gt;修改oauth_callback.js添加点击submit时的方法<br>
+<strong>四.用户个人中心模块</strong>1.个人基本信息:<br>
+&nbsp; &nbsp; 1)在User模型类中添加邮箱是否激活的字段<br>
+&nbsp; &nbsp; 2)数据库迁移<br>
+&nbsp; &nbsp; 3)users下创建新的视图类,查询用户基本信息(GET /user/):UserDetailView,继承自RetrieveAPIView<br>
+&nbsp; &nbsp; 4)调用序列化器类<br>
+&nbsp; &nbsp; 5)users下的序列化器模块下新建序列化器,用来设置返回哪些数据<br>
+&nbsp; &nbsp; 6)重写数据源的方法:get_object()不重写时返回的是query_set的查询集,返回当前请求的用户.return self.request.user<br>
+&nbsp; &nbsp; 7)指明必须通过登录认证后才能访问<br>
+&nbsp; &nbsp; 8)前端实现user_center_info.html和user_center_info.js<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; 9)实现保存邮箱后端接口(PUT /email/)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;新建EmailView视图,继承UpdateAPIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;指明序列化器类<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;重写get_object(self)方法获得当前的用户对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;设置权限为认证通过的用户<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;实现序列化器(EmailSerializer),继承ModelSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;指定模型类和显示的字段<br>
+&nbsp; &nbsp; 10)发送邮件到邮箱进行验证<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;注册自己的邮箱<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;django中添加配置,设置邮箱的配置信息<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).指明使用什么样的邮箱客户端,这里使用django自带的:EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).发送的smtp邮箱地址,这里使用163:EMAIL_HOST = 'smtp.163.com'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).端口号:固定为25,EMAIL_PORT = 25<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).发送邮件的邮箱:EMAIL_HOST_USER = 'itcast88@163.com'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).设置发送邮件的邮箱客户端授权码,没有授权码就为邮箱的密码:EMAIL_HOST_PASSWORD = 'python808'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).设置收件人看到的发件人:EMAIL_FROM = 'python&lt;<a href="mailto:itcast88@163.com">itcast88@163.com</a>&gt;'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;使用django提供的django.core.mail模块的send_mail()方法发送邮件:例如send_mail(subject, message, from_email, recipient_list,html_message=None)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;subject 邮件标题<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;message 普通邮件正文， 普通字符串<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;from_email 发件人<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;recipient_list 收件人列表<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;html_message 多媒体邮件正文，可以是html字符串<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;定义发送邮件的异步任务,实现发送邮件<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;在邮件的序列化器中重写update方法:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).取出验证后的email,然后赋值给当前对象的email,当前对象调用save()方法保存邮箱地址<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).在user模型类中补充一个额外的方法,生成验证邮箱的url.使用itsdangerous模块下的dumps方法,参数为user_id和email,返回的是生成后的验证邮箱URL+token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).序列化器中url调用生成验证邮箱url的方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).调用异步任务中的发送验证信息到用户邮箱的方法,传入参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5)返回当前用户<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;在urls.py中添加邮箱的类视图<br>
+&nbsp; &nbsp; 11)在前端user_center_info.js中添加保存email的方法<br>
+&nbsp; &nbsp; 12)邮箱验证前后端实现<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;添加邮箱验证成功返回的前端html页面:success_verify_email.html<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;修改success_verify_email.html的js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;后端实现接口:GET /emails/verification/?token=xxx<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;VerifyEmailView(邮箱验证类视图),继承自APIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;get方法下:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).获取参数token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).验证token是否存在,不存在返回信息,缺少token,状态码为400<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).token存在,验证token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).在User模型类中新建校验token的静态方法:check_verify_eamil_token,接收参数token,使用的是itsdangerous模块中的loads(),参数为token,需要捕获异常.出现异常返回None,没有出现异常,获取数据:user_id和email<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).通过user_id和email查询User表,捕获异常,发送异常返回NOne,否则返回user<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).视图函数中调用校验token的方法,获得user对象.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7).如果user为None,返回message:链接信息无效,状态码为400<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8).user存在,把user.email_active设为True,使用save()提交到数据库<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9).返回message:OK<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(10).注册路由<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(11).前端success_verify_email.html的js中使用location.serch拿到url中?以及?后面的所有内容,拼接到请求的地址中<br>
+​<br>
+2.收货地址<br>
+&nbsp; &nbsp; 1)新增收货地址<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;新建应用:areas<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;配置文件中注册app<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;models新建Area模型类<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).name<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).parent = models.Foreignkey('self',on_delete=models.SET_NULL,related_name='subs',null=True,blank=True)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).定义__str__方法,返回name<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;执行数据库迁移命令<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;补充测试数据:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).把测试数据areas.sql放入scripts目录下<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).新建脚本命令的文件:import_area_data_to_db.sh<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).输入命令:mysql -uroot -pmysql meiduo_mall &lt;./areas.sql<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).在首行添加运行环境:#!/bin/bash<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).为import_area_data_to_db.sh添加可执行权限:chmod +x import_area_data_to_db.sh<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).执行脚本文件:./import_area_data_to_db.sh<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt; areas下创建新的类视图AreasViewSet实现接口,继承自ReadOnlyModelViewSet<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).重写get_queryset方法:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.如果action=='list',返回过滤后的数据(parent=None)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.否则返回所有area数据对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).创建序列化器模块,定义序列化器.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).创建AreaSerializer序列化器类,继承自ModelSerializer.设置模型类为Area,显示的字段为id和name<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).创建SubAreaSerializer序列化器类,继承自Model.Serializer.设置模型类为Area,显示字段为id,name,subs,subs交给AreaSerializer(many=True,read_only=True)处理<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).重写get_serializer_class方法,选择对应的序列化器:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.如果action=='list',返回AreaSerializer序列化器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.否则返回SubAreaSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;在urls中使用DefaultRouter注册视图:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).router = DefaultRouter()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).router.register('areas',views.AreasViewSet,base_name='areas')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).urlpatterns+=router.urls<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;在总路由中包含分路由<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;修改前端代码<br>
+&nbsp; &nbsp; 2)使用redis缓存地址信息(因为地址信息除了查询没有其他的操作)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;安装扩展:pip install drf-extensions<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;类视图继承CacheResponseMixin<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;在配置文件中进行全局的缓存配置: <br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;# DRF扩展<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;REST_FRAMEWORK_EXTENSIONS = {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 缓存时间<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'DEFAULT_CACHE_RESPONSE_TIMEOUT': 60 * 60,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 缓存存储<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'DEFAULT_USE_CACHE': 'default',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;}<br>
+&nbsp; &nbsp; 3)关闭继承的视图中list方法的分页:配置类属性--&gt;pagination_class=None<br>
+&nbsp; &nbsp; 4)实现前端代码:user_center_site.html和user_center_site.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+&nbsp; &nbsp; 5)用户地址管理<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在users的models模块新建用户地址模型类,继承自BaseModel:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;class Address(BaseModel):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; """<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 用户地址<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; """<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='addresses', verbose_name='用户')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; title = models.CharField(max_length=20, verbose_name='地址名称')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; receiver = models.CharField(max_length=20, verbose_name='收货人')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; province = models.ForeignKey('areas.Area', on_delete=models.PROTECT, related_name='province_addresses', verbose_name='省')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; city = models.ForeignKey('areas.Area', on_delete=models.PROTECT, related_name='city_addresses', verbose_name='市')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; district = models.ForeignKey('areas.Area', on_delete=models.PROTECT, related_name='district_addresses', verbose_name='区')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; place = models.CharField(max_length=50, verbose_name='地址')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; mobile = models.CharField(max_length=11, verbose_name='手机')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; tel = models.CharField(max_length=20, null=True, blank=True, default='', verbose_name='固定电话')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; email = models.CharField(max_length=30, null=True, blank=True, default='', verbose_name='电子邮箱')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; is_deleted = models.BooleanField(default=False, verbose_name='逻辑删除')<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; class Meta:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;db_table = 'tb_address'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;verbose_name = '用户地址'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;verbose_name_plural = verbose_name<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;ordering = ['-update_time']&nbsp;&nbsp;# 指明查询是复数时的默认排序<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;为User模型类添加默认地址:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;default_address = models.ForeignKey('Address', related_name='users', null=True, blank=True, on_delete=models.SET_NULL, verbose_name='默认地址')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;数据库迁移<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;users中添加新的类视图,继承自增加和更新扩展类以及GenericAPIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).增加:重写create方法,保存用户地址数据,保存之前检查用户地址数目,如果超出上限,返回响应信息,如果没有,返回父类CreateModelMixin的create方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).更新:重写get_queryset方法,返回更新使用的数据集为当前用户的地址中没有被删除的数据.更新使用的是UpdateModelMixin.查询集在这里指明<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).查询:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.自己实现list方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.指明queryset为当前对象的get_queryset()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; c.指明序列化器为全局使用的序列化器:serializer=self.get_serializer(queryset,many=True)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; d.获得当前用户对象:user = self.request.user<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; e.返回响应,参数为字典,包含用户id,用户的默认地址id,地址的限制条数,用户所有的地址信息(serializer.data)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).删除:由于扩展类中是在真的删除,所以这里不使用.这里自己实现destroy方法来处理删除.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.获取删除的地址对象:address=self.get_object()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.进行逻辑删除(修改字段的值为True)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; c.调用save()方法保存<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; d.直接只返回状态码:204<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).设置默认地址状态:(只需要pk,通过pk在用户的地址列表中找到当前的地址)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.装饰器装饰方法status(),需要添加参数pk=None.以PUT方式进行访问,单一资源(detail=True)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.获取当前请求的地址对象.get_object()使用Pk在queryset中获取<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; c.设置当前请求的用户对象的默认地址为当前请求的地址对象<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; d.调用save()方法保存<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; e.返回响应信息Ok,状态码为200<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).设置title:需要请求体的参数title<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; a.和设置默认地址采用同样的方法.使用action装饰器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; b.获取当前地址对象.get_object()使用Pk在queryset中获取<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; c.调用修改地址标题的序列化器,传入参数为当前地址对象,数据为请求体中的参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;serializer模块新建用户地址序列化器:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).添加字段省市区的返回字符串以及接收和返回的省市区的id<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).指定模型类,和排除不需要显示的字段:exclude=('user','id_deleted','create_time','update_time')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).验证手机号<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).重写序列化器保存数据的方法,保存数据时把user加上:从序列化器的参数context中的request中取出user赋值给验证后的数据字典.返回父类的create方法,参数为验证后的数据字典 <br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).添加修改标题的序列化器,继承自ModelSerializer,指明模型类为Address,显示字段为title<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;在users/urls.py中添加路由,使用DefaultRouter()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).router = DefaultRouter()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).router.register(r'addresses',views.AddressViewSet,base_name='addresses')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).urlpatterns += router.urls<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;修改前端user_center_site.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp; <br>
+<strong>五.商品模块</strong>1.设计首页广告数据表结构<br>
+&nbsp; &nbsp; 1)广告类别表包含三个字段:广告类别id,广告类别的名称:name,广告类别识别键名:key<br>
+&nbsp; &nbsp; 2)广告内容表包含八个字段:广告的id,广告类别的id(外键):category,广告的标题:title,广告的内容页面链接地址:url,广告图片的地址:image,广告的文本内容:text,同类别广告内的顺序:sequence,是否显示:status<br>
+2.设计商品数据表结构<br>
+&nbsp; &nbsp; 1)商品类别表<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(类别id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;name(类别名称):VARCHAR(10)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;parent(父类别):FK,INTEGER<br>
+&nbsp; &nbsp; 2)商品频道表(一级类别)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(频道id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;group_id(所属组):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;category_id(类别id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;url(频道页链接地址):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;sequence(同组内的顺序):INTEGER<br>
+&nbsp; &nbsp; 3)商品SKU表<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(sku id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;name(sku 名称):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;caption(副标题):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;goods_id(商品id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;category_id(三级类别id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;price(单价):DECIMAL<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;cost_price(进价):DECIMAL<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;market_price(市场价格):DECIMAL<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;stock(库存):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;sales(销量):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;11&gt;comments(评论量):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;12&gt;is_launched(是否上架):BOOLEAN<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;13&gt;default_image_url(默认图片链接地址):VARCHAR<br>
+&nbsp; &nbsp; 4)商品(SPU)表<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(商品id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;name(商品名称):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;brand_id(品牌id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;category1_id(一级类别id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;category2_id(二级类别id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;category3_id(三级类别id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;sales(销量):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;comments(评论量):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;desc_detail(详细介绍):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;desc_pack(包装信息):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;11&gt;desc_service(售后服务):VARCHAR<br>
+&nbsp; &nbsp; 5)品牌表(brand)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(品牌id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;name(品牌名称):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;logo(logo图片链接):VARCHAR<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;first_letter(品牌首字母):CHAR(1)<br>
+&nbsp; &nbsp; 6)SKU图片表<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(图片id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;sku_id(所属sku id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;image(图片链接地址):VARCHAR<br>
+&nbsp; &nbsp; 7)商品规格表(goods_specification)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(规格id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;goods_id(商品id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;name(规格名称):VARCHAR<br>
+&nbsp; &nbsp; 8)规格选项表(specification_option)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(选项id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;spec_id(规格id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;value(选项值):VARCHAR<br>
+&nbsp; &nbsp; 9)规格信息表(sku_specification)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;id(规格信息id):INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;sku_id(所属sku id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;spec_id(规格id):FK,INTEGER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;option_id(规格选项id)FK,INTEGER<br>
+​<br>
+3.创建广告应用(contents)<br>
+&nbsp; &nbsp; 1)注册到apps中<br>
+&nbsp; &nbsp; 2)模型类中根据设计的数据库表添加首页广告数据模型类(继承自BaseModel)<br>
+4.创建商品应用(goods)<br>
+&nbsp; &nbsp; 1)新建goods应用<br>
+&nbsp; &nbsp; 2)添加到配置的apps中<br>
+&nbsp; &nbsp; 3)模型类中根据设计的数据库表添加商品数据模型类(继承自BaseModel)<br>
+5.数据库迁移<br>
+​<br>
+6.使用FastDFS（快速分布式文件系统）分布式文件系统保存图片<br>
+&nbsp; &nbsp; 1)使用Docker安装FastDFS<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;安装Docker<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1)更新apt源:sudo apt-get update<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2)安装依赖的工具:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;sudo apt-get install \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;apt-transport-https \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ca-certificates \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;curl \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;software-properties-common<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3)添加Docker官方GPG key:curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg" target="_blank">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4)设置Docker稳定版仓库:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;sudo add-apt-repository \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;"deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu" target="_blank">https://download.docker.com/linux/ubuntu</a> \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;$(lsb_release -cs) \<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;stable"<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5)添加仓库后，更新apt源索引:sudo apt-get update<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6)安装最新版Docker CE（社区版）:sudo apt-get install docker-ce<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7)检查Docker CE是否安装正确:sudo docker run hello-world<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8)为了避免每次命令都输入sudo，设置用户权限:sudo usermod -a -G docker $USER<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9)注销重新登录<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(10)启动与停止Docker:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 启动docker<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; sudo service docker start<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 停止docker<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; sudo service docker stop<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 重启docker<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; sudo service docker restart<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;获取FastDFS的镜像<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1)使用提供的镜像备份文件:docker load -i 文件路径/fastdfs_docker.tar(或者镜像源:docker image pull delron/fastdfs)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2)运行tracker:docker run -dti --network=host --name tracker -v /var/fdfs/tracker:/var/fdfs delron/fastdfs tracker&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3)运行storage:docker run -dti --network=host --name storage -e TRACKER_SERVER=10.211.55.5:22122 -v /var/fdfs/storage:/var/fdfs delron/fastdfs storage<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;pyhton中使用FastDFS客户端<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1)下载fastDFS开源包,并放到项目的scripts目录下<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2)安装:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; pip install&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;fdfs_client-py-master.zip<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; pip install mutagen<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; pip isntall requests<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3)在utils下新建fastdfs包,把配置文件放入包下,修改配置文件的log位置以及tracker_server的地址<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp;2)自定义django文件存储系统<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在全局的utils下的fastdfs包中新建fdfs_storage模块,导包:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;from django.conf import settings<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;from django.core.files.storage import Storage<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;from django.utils.deconstruct import deconstructible<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;from fdfs_client.client import Fdfs_client<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;新建FastDFSStorage()类,继承自Storage,使用deconstructible装饰<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;初始化时传参,加上默认值<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;实现_open()方法直接pass和_save()方法.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;重写_save()方法.参数name(传入的文件名),content(文件对象),返回保存到数据库中的FastDFS的文件名.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;重写exists()方法,参数为name,在调用_save()方法之前调用,判断文件是否存在文件系统中.直接pass.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;重写url()方法,参数为name.返回值为配置的url+name.在调用数据库的image.url时就可以取到这个值.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;配置文件中配置django的文件存储为自定义的FastDFSStorage类:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;# django文件存储<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DEFAULT_FILE_STORAGE = 'meiduo_mall.utils.fastdfs.fdfs_storage.FastDFSStorage'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;配置文件中配置FastDFS的url和配置文件:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;# FastDFS<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;FDFS_URL = 'http://image.meiduo.site:8888/'&nbsp;&nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;在/etc/hosts中添加方法FastDFS storage服务器的域名:127.0.0.1 image.meiduo.site<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+7.CKEditor富文本编辑器<br>
+&nbsp; &nbsp; 1)安装:pip install django-ckeditor<br>
+&nbsp; &nbsp; 2)配置中注册应用:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'ckeditor',&nbsp;&nbsp;# 富文本编辑器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'ckeditor_uploader',&nbsp;&nbsp;# 富文本编辑器上传图片模块<br>
+&nbsp; &nbsp; 3)配置文件中添加CKEditor设置:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;# 富文本编辑器ckeditor配置<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;CKEDITOR_CONFIGS = {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'default': {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'toolbar': 'full',&nbsp;&nbsp;# 工具条功能<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'height': 300,&nbsp;&nbsp;# 编辑器高度<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 'width': 300,&nbsp;&nbsp;# 编辑器宽<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;},<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;CKEDITOR_UPLOAD_PATH = ''&nbsp;&nbsp;# 上传图片保存路径，使用了FastDFS，所以此处设为''<br>
+&nbsp; &nbsp; 4)在总路由中添加ckeditor路由:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;url(r'^ckeditor/', include('ckeditor_uploader.urls')),<br>
+&nbsp; &nbsp; 5)修改模型类SPU中的desc_detail,desc_pack,desc_service,]<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;desc_detail = RichTextUploadingField(default='', verbose_name='详细介绍')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;desc_pack = RichTextField(default='', verbose_name='包装信息')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;desc_service = RichTextUploadingField(default='', verbose_name='售后服务')<br>
+&nbsp; &nbsp; 6)数据库迁移<br>
+&nbsp; &nbsp; 7)修改bug:通过Django上传的图片保存到了FastDFS中，而保存在FastDFS中的文件名没有后缀名，ckeditor在处理上传后的文件名按照有后缀名来处理，所以会出现bug错误.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;修改方法:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;1&gt;找到虚拟环境目录中的ckeditor_uploader/views.py<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;2&gt;在第95行增加一行代码进行判断,切割完之后长度是否大于1,大于1时再进行判断后缀.&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp; 8)添加测试数据:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在contents应用和goods应用的admin中注册模型类:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;from . import models<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;admin.site.register(models.ContentCategory)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;...<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;添加FastDFS保存的测试图片数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).先把之前storage配置中被映射的宿主目录将/var/fdfs/storage中的data目录删除,再把测试数据压缩包解压进去<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;添加对应的数据库测试数据,把数据放入scripts目录下,使用脚本文件导入<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;创建超级管理员用户:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).python manage.py createsuperuser<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).name:admin<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).password:admin123<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
+8.页面静态化:使用模板,把数据读取出来渲染到模板页面(设置定时任务,比如每五分钟生成一次,或者设置修改数据的时候生成),生成的页面存到固定的地方(静态文件目录),前端访问时就从存储页面的地方加载即可.)可以不用频繁的操作数据库,提高加载页面的速度.<br>
+&nbsp; &nbsp;&nbsp;&nbsp;1)配置文件中添加保存静态文件的目录:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;# 生成的静态html文件保存目录<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;GENERATED_STATIC_HTML_FILES_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'front_end_pc')<br>
+&nbsp; &nbsp; 2)在全局Meiduo_mall下新建templates模板目录<br>
+&nbsp; &nbsp; 3)在配置文件中的为模板配置中的DIRS配置templates的路径:'DIRS': [os.path.join(BASE_DIR, 'templates')],<br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; 5)首页静态化<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在contents应用下新建crons模块,定义一个函数(generate_static_index_html()),生成静态的主页html文件<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;设置静态文件的保存目录,使用配置文件中配置的:file_path = os.path.jion(settings.GENERATED_STATIC_HTML_FILES_DIR,'index.html')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;在templates下新建index.html的模板文件<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;在函数中把生成好的html文件保存到配置的路径,'w'模式打开,设置编码为encoding='utf-8'.把生成的静态html字符串写入到文件.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;新建index.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;在index.js中声明Vue使用的模板变量语法,在el后面声明:delimiters: ['[[', ']]']<br>
+​<br>
+&nbsp; &nbsp; 6)定时任务实现(操作系统完成的):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;安装扩展:pip install django-crontab<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;在配置文件中注册:django-crontab&nbsp;&nbsp;# 定时任务<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;配置文件中设置定时任务列表:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;CRONJOBS=[<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 每5分钟执行一次生成主页静态文件<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; ('*/5****','contents.crons.generate_static_index_html','&gt;&gt;'+os.path.join(os.path.dirname(BASE_DIR),"logs/crontab.log")),<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;]<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;添加定时任务到操作系统:python manage.py crontab add<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(显示已经激活的定时任务:python manage.py crontab show<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;移除定时任务:python manage.py crontab remove)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;配置文件中配置解决crontab中文问题:CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'<br>
+&nbsp; &nbsp;&nbsp; &nbsp; <br>
+&nbsp; &nbsp; 7)商品详情页静态化<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;异步任务包新建html异步任务包<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;提出商品分类,放到商品的utils下<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;新建异步任务函数,生成静态商品详情页面(查询数据库)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;main中添加异步任务<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;goods中admin.py中新建自定义的admin管理类<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;重写admin管理类中修改时就触发定时任务重新生成html静态页面的模型类中的save_model(self,request,obj,from,change)和delete_model(request,obj),在其中添加异步任务.什么时候使用什么时候导入.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;在sku图片的自定义amdin管理类中设置默认图片.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;修改detail.html放到模板文件夹<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;修改新页面的detail.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;在前端文件夹中新建goods文件夹用来存放生成好的商品详情页html文件<br>
+&nbsp; &nbsp; 8)为了方便开发,随时生成静态页面,在scripts中新建生成页面静态化的python脚本文件(regenerate_static_index_html.py)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;添加django的配置文件<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;初始化django:(django运行脚本的时候配置)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;import django<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;django.setup()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;导入生成静态html页面的函数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;在函数运行时调用函数(__main__中)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;在最上面添加导包路径(sys可以添加相对路径,一般在脚本中使用相对路径,因为前提是知道了脚本文件在哪运行):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;import sys<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;sys.path.insert(0,'../')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;还可为文件指明运行的shell:首行添加#!/user/bin/env python,再为文件添加可执行权限<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;新建生成详情页的脚本文件(regenerate_static_detail_html.py)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;配置,把异步任务中的生成商品详情页的代码复制过来<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;在__main__中查询所有的SKU,循环遍历,调用生成商品详情页的方法,参数为每个对象的id<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+9.用户浏览历史记录(把用户浏览的sku_id(这里设置为五个)保存到redis里面),采用list的类型<br>
+&nbsp; &nbsp; 1)配置文件中配置history的redis.使用3号库,因为这里只有一台电脑,真实情况是配置另一台电脑上的redis<br>
+&nbsp; &nbsp; 2)用户视图下添加接口(POSt /browse_histories/)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;新建用户浏览历史记录类视图(UserBrowsingHistoryView()),继承自CreateAPIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;指定序列化器,指定权限<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;实现序列化器(AddUserBrowsingHistorySerializer),继承自Serializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;定义字段:sku_id = serialziers.IntegerField(label="商品编号",min_value=1)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;实现校验字段的方法,检验sku_id是否存在.<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;重写create方法:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1)获得校验后的sku_id<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2)获得当前用户的user:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; self.context['request'].user<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3)链接redis<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4)使用管道pipeline()<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5)设置redis_key:'history_%s',%user.id<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6)去重:lrem(redis_key,0,sku_id)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7)保存,增加:lpush(redis_key,sku_id)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8)截断:ltrim(redis_key,0,用户浏览历史记录常量-1)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9)提交到redis<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(10)返回验证后的数据<br>
+&nbsp; &nbsp; 3)实现接口(GET /browse_histories):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;在UserBrowsingHistoryView视图中实现get方法<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;获得user_id:user_id=request.user.id<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;链接redis<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;查询redis,获得redis列表:lrange('history_%s'%user_id,0,自定义的用户历史记录常量)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;查询数据库,遍历的方式:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;for sku_id in sku_id_list:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; sku = SKU.objects.get(id=sku_id)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; skus.append(sku)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;实现序列化器,继承ModelSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;指定模型类为SKU,指明显示的字段(接口文档上的五个字段)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;视图中调用序列化器,传入参数为skus和many=True<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;返回响应,参数为序列化器对象的.data<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;修改前端的detail.js和user_center_info.html以及user_center_info.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;11&gt;添加路由<br>
+​<br>
+10.商品列表页<br>
+&nbsp; &nbsp; 1)获取商品列表数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;后端接口设计: GET /categories/(?P&lt;category_id&gt;\d+)/skus?page=xxx&amp;page_size=xxx&amp;ordering=xxx<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;请求参数:路径参数+查询字符串参数<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3&gt;返回数据:JSON<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;4&gt;商品应用下视图模块创建类视图(SKUListView()),继承自ListAPIView<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;5&gt;指明序列化器SKUSerializer:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).新建序列化器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).继承自ModelSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).指明模型类为SKU<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).指明显示的字段(根据接口文档)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;6&gt;指明查询数据集,通过重写get_queryset,根据category_id,和is_launchend过滤查询SKU,把查询结果返回<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;7&gt;排序:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;filter_backends=[OrderingFilter]<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ordering_fields=("create_time","peice","sale")<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;8&gt;分页:(进行分页查询时DRF默认返回了count,next,previous,results字段),ListModelMixin的list方法会对数据进行过滤和分页<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).在全局的utils中自己实现分页的设置(StandarResultsSetPagination),继承自PageNumberPagination<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).设置默认每页条数:page_size=2,前端访问指明每页数量的参数名:page_size_query_param="page_size",限制前端指明每页数量的最大限制:max_page_size=20<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).全局配置中设置分页为自定义的分页器<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;9&gt;添加路由,全局包含路由<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;10&gt;修改前端list.html<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;11&gt;添加list.js<br>
+​<br>
+&nbsp; &nbsp; 2)商品搜索(使用Elasticsearch搜索引擎)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1&gt;使用Docker安装Elasticsearch<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).获取镜像:docker image pull delron/elasticsearch-ik:2.4.6-1.0或者使用源码包docker load -i elasticsearch-ik-2.4.6_docker.tar<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).把配置文件目录复制到elasticsearch-2.4.6下<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).修改elasticsearch的配置文件 elasticsearc-2.4.6/config/elasticsearch.yml第54行，更改ip地址为本机ip地址:network.host: 10.211.55.5<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).创建docker容器运行:docker run -dti --network=host --name=elasticsearch -v /home/python/elasticsearch-2.4.6/config:/usr/share/elasticsearch/config delron/elasticsearch-ik:2.4.6-1.0<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2&gt;使用haystack对接Elasticsearch:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(1).安装django中支持drf的扩展类:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pip install drf-haystack<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;pip install elasticsearch==2.4.1<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(2).配置文件中注册应用:haystack<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(3).配置haystack使用的搜索引擎后端:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # Haystack<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; HAYSTACK_CONNECTIONS = {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;'default': {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'URL': 'http://10.211.55.5:9200/',&nbsp;&nbsp;# 此处为elasticsearch运行的服务器ip地址，端口号固定为9200<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 'INDEX_NAME': 'meiduo',&nbsp;&nbsp;# 指定elasticsearch建立的索引库的名称<br>
+&nbsp; &nbsp; },<br>
+}<br>
+​<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; # 当添加、修改、删除数据时，自动生成索引<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(4).在goods应用中新建search_indexes.py文件，用于存放索引类(继承自indexes.SearchIndex,indexes.Indexable)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(5).在templates目录下创建text字段使用的模板文件:templates/search/indexes/goods/sku_text.txt<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(6).在索引类中实现get_model方法,返回值为对应的模型类类名<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(7).模板文件中使用django的模板语法指明建立索引的字段,当通过text字段传参时索引查询的字段(跨字段查询):{{object.id}}{{object.name}}{{object.caption}}<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(8).索引类中新建其他字段,可以通过单独的字段传参查询<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(9).索引类中实现index_queryset方法,指明返回要建立索引的数据查询集,返回的是self.get_model().objects.filter(is_launched=True)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(10).手动生成初始索引:python manage.py rebuild_index<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(11).在goods/views.py中创建视图SKUSearchViewSet,继承自HaystackViewSet.指明index_models=[SKU],serializer_class=SKUIndexSerializer<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (12).在goods/serializers.py中创建haystack序列化器SKUIndexSerializer,继承自HaystackSerializer.指明索引类和显示的字段:index_classes=[SKUIndex],fields= ('text', 'id', 'name', 'price', 'default_image_url', 'comments')<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(13).注册路由<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(14).测试数据<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(15).前端实现,新建search.html和search.js<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br>
+<br>
+<br>
+</td></tr></tbody></table>
+
+        
+</div>
+    
+
+    
+<div id="comment_3755916" class="cm">
+</div>
+    
+
+<div id="post_rate_div_3755916"></div>
+    </div>
+<script type="text/javascript">var auc_list_tmp = $('auc_list_tmp');if(auc_list_tmp !== null){document.write(auc_list_tmp.innerHTML);auc_list_tmp.innerHTML='';}
+function lalala(){
+	ajaxget('plugin.php?id=auction:involve&operation=view&tid=426624&page=1', 'list_ajax');
+	$('list_ajax').style.display = 'block';
+}
+if($('list_ajax')){setTimeout('lalala()', 1000);}
+</script></div>
+
+
+
+</td></tr>
+<tr><td class="plc plm">
+<div id="p_btn" class="mtw hm cl" style="margin-bottom: 30px;">
+
+<a class="followp" href="http://bbs.itheima.com/home.php?mod=spacecp&amp;ac=follow&amp;op=relay&amp;tid=426624&amp;from=forum" onclick="showWindow(&#39;relaythread&#39;, this.href, &#39;get&#39;, 0);" title="转播求扩散"><i><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/zhuanbo.png" alt="转播" data-bd-imgshare-binded="1">转播</i></a>
+<a href="http://bbs.itheima.com/forum.php?mod=collection&amp;action=edit&amp;op=addthread&amp;tid=426624" id="k_collect" onclick="showWindow(this.id, this.href);return false;" onmouseover="this.title = $(&#39;collectionnumber&#39;).innerHTML + &#39; 人淘帖&#39;" title="淘好帖进专辑"><i><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/taotie.png" alt="分享" data-bd-imgshare-binded="1">淘帖<span id="collectionnumber" style="display:none">0</span></i></a>
+<a id="recommend_add" href="http://bbs.itheima.com/forum.php?mod=misc&amp;action=recommend&amp;do=add&amp;tid=426624&amp;hash=a6aa3a36" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = $(&#39;recommendv_add&#39;).innerHTML + &#39; 人顶&#39;" title="顶一下"><i><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/zan.png" alt="顶" style="margin-top: 3px;" data-bd-imgshare-binded="1"><span id="recommendv_add" style="display:none">0</span></i></a>
+<a id="recommend_subtract" href="http://bbs.itheima.com/forum.php?mod=misc&amp;action=recommend&amp;do=subtract&amp;tid=426624&amp;hash=a6aa3a36" onclick="showWindow(&#39;login&#39;, this.href)" onmouseover="this.title = $(&#39;recommendv_subtract&#39;).innerHTML + &#39; 人踩&#39;" title="踩一下"><i><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/rec_subtract.png" alt="踩" data-bd-imgshare-binded="1">踩<span id="recommendv_subtract" style="display:none">0</span></i></a>
+</div>
+        
+        <div id="viewthread_foot cl">
+                    <div class="viewthread_foot cl" style="margin-bottom: 0; border-bottom: 0;">
+<div class="bdsharebuttonbox cl bdshare-button-style0-16" style="padding: 0 5px 20px 0;" data-bd-bind="1586043041280">
+<em style="padding: 0; background: none; color: #999999;">分享至 :</em>
+<a title="分享到新浪微博" href="http://bbs.itheima.com/#" class="bds_tsina" data-cmd="tsina"></a>
+<a title="分享到微信" href="http://bbs.itheima.com/#" class="bds_weixin" data-cmd="weixin"></a>
+<a href="http://bbs.itheima.com/#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+<a href="http://bbs.itheima.com/#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<span class="cutline" style="margin: 9px 10px 0 0;"></span>
+<a href="http://bbs.itheima.com/home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=426624&amp;formhash=a6aa3a36" id="k_favorite" onclick="showWindow(this.id, this.href, &#39;get&#39;, 0);" onmouseover="this.title = $(&#39;favoritenumber&#39;).innerHTML + &#39; 人收藏&#39;" title="收藏本帖" class="k_favorite">收藏</a>
+                  <div class="y" style="margin-top: 7px;">
+                      <em>
+                                                                                                                                        <a class="times_fastre" href="http://bbs.itheima.com/forum.php?mod=post&amp;action=reply&amp;fid=425&amp;tid=426624&amp;reppost=3755916&amp;extra=&amp;page=1" onclick="showWindow(&#39;reply&#39;, this.href)"><span></span>回复</a>
+                                                    <a href="http://bbs.itheima.com/forum.php?mod=viewthread&amp;tid=426624&amp;page=1&amp;authorid=468765" rel="nofollow">只看该作者</a>
+                                                                                                                    </em>
+                  </div>
+</div>
+          </div>
+
+</td>
+</tr>
+
+<tr id="_postposition3755916"></tr>
+<tr>
+<td class="plc" style=" padding:0;">
+
+</td>
+</tr>
+
+</tbody></table>
+
+</div>
+        </div>
+ </div>
+    <!--[diy=diy_like]--><div id="diy_like" class="area"><div id="frame2i79zX" class="frame move-span cl frame-1"><div id="frame2i79zX_left" class="column frame-1-c"><div id="frame2i79zX_left_temp" class="move-span temp"></div><div id="portal_block_526" class="block move-span"><div id="portal_block_526_content" class="dxb_bc"><div class="portal_block_summary"><a href="http://baoming.itcast.cn/page/7fdb6837b930a-5b1617af46841" target="_blank"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/104936xamuqtu5p4tuapqv.png" width="100%" data-bd-imgshare-binded="1"></a></div></div></div></div></div></div><!--[/diy]-->
+<div class="box cl" style="padding: 25px 25px 0 25px;">
+                <div id="postlist" class="pl bm postlist_reply">
+        <div class="reply_tit cl">
+        	<h2><strong>0</strong> 个回复</h2>
+            </div>
+        <div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none;"></div></div>
+</div>
+
+
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="a6aa3a36">
+<input type="hidden" name="optgroup">
+<input type="hidden" name="operation">
+<input type="hidden" name="listextra" value="">
+<input type="hidden" name="page" value="1">
+</form>
+
+
+<div class="pgs mtm mbm cl" style="padding: 20px 0 0 0;">
+</div>
+
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+
+
+<script type="text/javascript">
+var connect_qzone_share_url = '';
+var connect_weibo_share_url = '';
+var connect_thread_info = {
+thread_url: 'http://bbs.itheima.com/thread-426624-1-1.html',
+thread_id: '426624',
+post_id: '',
+forum_id: '425',
+author_id: '',
+author: ''
+};
+
+connect_autoshare = '';
+connect_isbind = '';
+if(connect_autoshare == 1 && connect_isbind) {
+_attachEvent(window, 'load', function(){
+connect_share(connect_weibo_share_url, connect_openid);
+});
+}
+</script>
+
+
+<script type="text/javascript">
+new lazyload();
+</script>
+<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 0, 0, 'forum.php?mod=viewthread&tid=426624', 1);}</script>
+
+</div>
+<!--[diy=diy_like1]--><div id="diy_like1" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('12');
+var postmaxchars = parseInt('50000');
+var disablepostctrl = parseInt('0');
+</script>
+
+
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="http://bbs.itheima.com/forum.php?mod=post&amp;action=reply&amp;fid=425&amp;tid=426624&amp;extra=&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" onsubmit="return fastpostvalidate(this)">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+            <td class="plc">
+
+<span id="fastpostreturn"></span>
+
+
+<div class="cl">
+<div id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="http://bbs.itheima.com/forum.php?mod=post&amp;action=reply&amp;fid=425&amp;tid=426624" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/seditor.js.下载" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+</div></div>            
+<div class="area">
+<div class="pt hm">
+您需要登录后才可以回帖 <a href="http://bbs.itheima.com/member.php?mod=logging&amp;action=login" onclick="showWindow(&#39;login&#39;, this.href)" class="xi2">登录</a> | <a href="http://bbs.itheima.com/member.php?mod=gfreg" class="xi2">加入黑马</a>
+
+
+<a href="http://bbs.itheima.com/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dviewthread%26tid%3D426624%26highlight%3Ddjango&amp;statfrom=login" target="_top" rel="nofollow"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/qq_login.gif" class="vm" data-bd-imgshare-binded="1"></a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<input type="hidden" name="formhash" value="a6aa3a36">
+<input type="hidden" name="usesig" value="">
+<input type="hidden" name="subject" value="  ">
+<div class="pnpost cl" style="padding-top: 10px;">
+<button type="button" onclick="showWindow(&#39;login&#39;, &#39;member.php?mod=logging&amp;action=login&amp;guestmessage=yes&#39;)" onmouseover="checkpostrule(&#39;seccheck_fastpost&#39;, &#39;ac=reply&#39;);this.onmouseover=null" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5" style="float: right; padding: 0; height: 35px; line-height: 35px;"><strong style="padding: 0 15px; font-size: 14px; font-weight: bold;">发表回复</strong></button>
+    	<em style="float: right; margin: 2px 0 0 0;">
+   </em>        
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<script type="text/javascript">
+var relatedlink = [];relatedlink[1] = {'sname':'django', 'surl':''};
+relatedlinks('postmessage_3755916');
+</script>
+
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = '不收听';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = '收听TA';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=a6aa3a36&fuid='+values['fuid'];
+}
+}
+fixed_avatar([3755916], 1);
+</script></div><div><div class="qimo_chatpup" id="qimo_chatpup" style="display: none; right: 0px; bottom: 0px; width: 355px; height: 500px;"><iframe id="chatIframe" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/moor_chat.html" height="100%" width="100%"></iframe><div id="maskChat"></div></div><div id="chatBtn" class="chatBtn" style="display: none; right: 18px; z-index: -100; background-color: rgb(181, 14, 3); border-radius: 55px; bottom: 18px; width: 25px; height: 25px; padding: 15px;"><img width="25px" height="25px" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/1.png" style="width: 25px; height: 25px; margin: 0px; padding: 0px; transform: unset; transition: unset;" data-bd-imgshare-binded="1"><span></span><span id="qimo_badge"></span></div><div id="qimo_showNewMsg" class="qimo_showNewMsg" style="display: none; "><div id="qimo_showNewMsg_box" class="qimo_showNewMsg_box"><div id="qimo_showNewMsg_title_box" class="qimo_showNewMsg_title_box"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/agentLogo.png" data-bd-imgshare-binded="1"><span id="qimo_showNewMsg_title" class="qimo_showNewMsg_title"></span></div> <div id="qimo_showNewMsg_content" class="qimo_showNewMsg_content"></div></div><span id="qimo_showNewMsg_close" class="qimo_showNewMsg_close">x</span></div></div><div><div class="qimo_inviteBox" id="qimo_inviteBox" style="display: none; right: 10px; bottom: 10px; background: rgb(63, 184, 253);"><img class="qimo_invite_close" id="qimo_invite_close" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/invite-close.png" data-bd-imgshare-binded="1"><div class="qimo_inviteBox_top"><div class="qimo_inviteBox_top_img" id="qimo_inviteBox_top_img"><img id="qimo_inviteBox_img" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/896beb70-d81a-11e7-b6e7-9da891414b0f.png" data-bd-imgshare-binded="1"></div><div class="qimo_inviteBox_top_right" id="qimo_inviteBox_top_right"><p id="qimo_inviteBox_InviteWords">欢迎咨询，请问有什么可以帮您的吗？</p><div class="qimo_inviteBox_top_button" id="qimo_inviteBox_top_button"><div id="invite_click_button_1" class="divbuttons msie11PadTop" style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">立即咨询</div><div id="invite_click_button_2" class="divbuttons msie11PadTop" style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">以后再说</div></div></div></div><div class="qimo_inviteBox_bottom"><textarea id="sendInviteText" placeholder="请输入您想要输入的内容..." rows="2"></textarea><div id="sendInviteContent" class="sendInviteContent msie11PadTop" style="background: rgb(63, 184, 253);">发送</div></div></div></div><div><div class="qimo_screenpop" id="qimo_screenpop" style="display: none"><div class="screendragbar" id="screendrag"></div><div class="qimo_headerimg" id="qimo_headerimg"><div class="screenminimg" style="display: none" id="screenminimg"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/small.png" data-bd-imgshare-binded="1"></div><div class="screenminimg" id="screenmaximg"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/big.png" data-bd-imgshare-binded="1"></div><div class="screenminimg" id="screencloseimg"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/close.png" style="width: 16px;height: 16px;" data-bd-imgshare-binded="1"></div></div> <div id="mask"></div><iframe id="screenIframe" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/saved_resource.html" height="100%" width="100%" allow="microphone; camera"></iframe></div></div><div><div class="qimo_videopup" id="qimo_videopup" style="display: none"><div style="" class="dragbar" id="drag"></div><div class="qimo_minimg" id="qimo_minimg"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/small.png" data-bd-imgshare-binded="1"></div><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/big.png" class="qimo_maximg" id="qimo_maximg" style="display: none" data-bd-imgshare-binded="1"> <div id="mask"></div><iframe id="videoIframe" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/saved_resource(1).html" height="100%" width="100%" allow="microphone; camera"></iframe></div></div>
+ 
+     
+
+
+
+<script type="text/javascript">var cookieLogin = Ajax("TEXT");cookieLogin.get("connect.php?mod=check&op=cookie", function() {});</script>
+
+
+<script type="text/javascript">
+function mw_syntaxhighlighter_show_editor_codebox(editortype) {
+var tag = 'code';
+var mw_syntaxhighlighter_tag = 'mw_shl_code';
+var str = '请输入要插入的代码<br>选择语言：';
+str += '<select id="brush_lang" name="lang">';str += '<option value="applescript">AppleScript</option>';
+str += '<option value="actionscript3">Actionscript3</option>';
+str += '<option value="bash">Bash shell</option>';
+str += '<option value="coldfusion">ColdFusion</option>';
+str += '<option value="c">C</option>';
+str += '<option value="cpp">C++</option>';
+str += '<option value="csharp">C#</option>';
+str += '<option value="css">CSS</option>';
+str += '<option value="delphi">Delphi</option>';
+str += '<option value="diff">Diff</option>';
+str += '<option value="erlang">Erlang</option>';
+str += '<option value="groovy">Groovy</option>';
+str += '<option value="html">HTML</option>';
+str += '<option value="java">Java</option>';
+str += '<option value="javafx">JavaFX</option>';
+str += '<option value="javascript">JavaScript</option>';
+str += '<option value="pascal">Pascal</option>';
+str += '<option value="patch">Patch</option>';
+str += '<option value="perl">Perl</option>';
+str += '<option value="php">PHP</option>';
+str += '<option value="text">Plain Text</option>';
+str += '<option value="powershell">PowerShell</option>';
+str += '<option value="python">Python</option>';
+str += '<option value="ruby">Ruby</option>';
+str += '<option value="rails">Ruby on Rails</option>';
+str += '<option value="sass">Sass</option>';
+str += '<option value="scala">Scala</option>';
+str += '<option value="scss">Scss</option>';
+str += '<option value="shell">Shell</option>';
+str += '<option value="sql">SQL</option>';
+str += '<option value="vb">Visual Basic</option>';
+str += '<option value="vbnet">Visual Basic .NET</option>';
+str += '<option value="xhtml">XHTML</option>';
+str += '<option value="xml">XML</option>';
+str += '<option value="xslt">XSLT</option>';
+str += '<option value="objc">Objective-C</option>';
+str += '<option value="asm">Asm</option>';
+str += '<option value="aauto">AAuto</option>';
+str += '<option value="golang">Golang</option>';
+
+str += '</select><br>';
+
+str += '显示行号：';
+str += '<input type="checkbox" id="show_gutter" name="show_gutter" value="1" checked><br>';
+
+
+if(editortype == 'newthread') {
+
+var sel, selection;
+var str1 = '', strdialog = 0, stitle = '';
+var ctrlid = editorid + '_' + tag;
+var menu = $(ctrlid + '_menu');
+var pos = [0, 0];
+var menuwidth = 270;
+var menupos = '43!';
+var menutype = 'menu';
+
+str += '<div id="mw_codearea">你的代码：<br>';
+str += '<textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea></div>';
+
+//note �޸���ie�µĲ���������
+if(BROWSER.ie) {
+if(wysiwyg) {
+editdoc.body.focus();
+sel = editdoc.selection.createRange();
+} else {
+sel = document.selection.createRange();
+}
+pos = getCaret();
+}
+
+selection = sel ? (wysiwyg ? sel.text : sel.text) : mw_highlighter_getSel();//note �޸�sel.HtmlText�޸�ΪText���༭���еĿ��ӻ��ò��ʵ�ֱȽ�����
+if(menu) {
+if($(ctrlid).getAttribute('menupos') !== null) {
+menupos = $(ctrlid).getAttribute('menupos');
+}
+if($(ctrlid).getAttribute('menuwidth') !== null) {
+menu.style.width = $(ctrlid).getAttribute('menuwidth') + 'px';
+}
+
+if(selection) {//note ���ѡ�������ݵĴ���
+$('mw_codearea').style.display = 'none';
+}
+
+showMenu({'ctrlid':ctrlid,'evt':'click','pos':menupos,'timeout':250,'duration':in_array(tag, ['fontname', 'fontsize', 'sml']) ? 2 : 3,'drag':1});
+} else {
+
+var menu = document.createElement('div');
+menu.id = ctrlid + '_menu';
+menu.style.display = 'none';
+menu.className = 'p_pof upf';
+menu.style.width = menuwidth + 'px';
+
+s = '<div class="p_opt cl"><span class="y" style="margin:-10px -10px 0 0"><a onclick="hideMenu();return false;" class="flbc" href="javascript:;">关闭</a></span><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>提交</strong></button></div></div>';
+menu.innerHTML = s;
+$(editorid + '_editortoolbar').appendChild(menu);
+
+if(selection) {//note ���ѡ�������ݵĴ���
+$('mw_codearea').style.display = 'none';
+}
+
+showMenu({'ctrlid':ctrlid,'mtype':menutype,'evt':'click','duration':3,'cache':0,'drag':1,'pos':menupos});
+}
+
+try {
+if($(ctrlid + '_param_1')) {
+$(ctrlid + '_param_1').focus();
+}
+} catch(e) {}
+var objs = menu.getElementsByTagName('*');
+for(var i = 0; i < objs.length; i++) {
+_attachEvent(objs[i], 'keydown', function(e) {
+e = e ? e : event;
+obj = BROWSER.ie ? event.srcElement : e.target;
+if((obj.type == 'text' && e.keyCode == 13) || (obj.type == 'textarea' && e.ctrlKey && e.keyCode == 13)) {
+if($(ctrlid + '_submit') && tag != 'image') $(ctrlid + '_submit').click();
+doane(e);
+} else if(e.keyCode == 27) {
+hideMenu();
+doane(e);
+}
+});
+}
+if($(ctrlid + '_submit')) $(ctrlid + '_submit').onclick = function() {
+checkFocus();
+if(BROWSER.ie && wysiwyg) {
+setCaret(pos[0]);
+}
+if(wysiwyg) {
+if(!BROWSER.ie) {
+selection = selection ? selection : '';
+}
+}
+str1 = $(ctrlid + '_param_1') && $(ctrlid + '_param_1').value ? $(ctrlid + '_param_1').value : (selection ? selection : '');
+
+var opentag = '[' + mw_syntaxhighlighter_tag + '=' + $('brush_lang').value + ',' + (($('show_gutter') && $('show_gutter').checked) ? 'true' : 'false') + ']';
+var closetag = '[/' + mw_syntaxhighlighter_tag + ']';
+
+if(wysiwyg) {
+str1 = preg_replace(['<', '>'], ['&lt;', '&gt;'], str1);
+
+str1 = str1.replace(/\r?\n/g, '<br />');
+}
+str1 = opentag + str1 + closetag;
+insertText(str1, strlen(opentag), strlen(closetag), false, sel);
+hideMenu();
+};
+
+} else if(editortype == 'fastpost' || editortype == 'post') {
+
+var sel = false;
+var seditorkey = editortype;
+if(!isUndefined($(seditorkey + 'message').selectionStart)) {
+sel = $(seditorkey + 'message').selectionEnd - $(seditorkey + 'message').selectionStart;
+} else if(document.selection && document.selection.createRange) {
+$(seditorkey + 'message').focus();
+var sel = document.selection.createRange();
+$(seditorkey + 'message').sel = sel;
+sel = sel.text ? true : false;
+}
+
+var ctrlid = seditorkey + tag;
+var menuid = ctrlid + '_menu';
+
+str += '<div id="mw_codearea">你的代码：<br>';
+str += '<textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea></div>';
+
+if(!$(menuid)) {
+var submitstr = "seditor_insertunit('" + seditorkey + "', '[" + mw_syntaxhighlighter_tag + "=' + $('brush_lang').value + ',' + (($('show_gutter') && $('show_gutter').checked) ? 'true' : 'false') + ']'+$('" + ctrlid + "_param_1').value, '[/" + mw_syntaxhighlighter_tag + "]', null, 1);hideMenu();";
+var menu = document.createElement('div');
+menu.id = menuid;
+menu.style.display = 'none';
+menu.className = 'p_pof upf';
+menu.style.width = '270px';
+$('append_parent').appendChild(menu);
+menu.innerHTML = '<span class="y"><a onclick="hideMenu()" class="flbc" href="javascript:;">关闭</a></span><div class="p_opt cl"><form onsubmit="' + submitstr + ';return false;" autocomplete="off"><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>提交</strong></button><button type="button" onClick="hideMenu()" class="pn"><em>取消</em></button></div></form></div>';
+}
+if(sel) {//note ���ѡ�������ݵĴ���
+$('mw_codearea').style.display = 'none';
+}
+showMenu({'ctrlid':ctrlid,'evt':'click','duration':3,'cache':0,'drag':1});
+}
+}
+
+function mw_highlighter_getSel() {
+if(wysiwyg) {
+try {
+selection = editwin.getSelection();
+return selection.toString();
+//checkFocus();
+//range = selection ? selection.getRangeAt(0) : editdoc.createRange();
+//return readNodes(range.cloneContents(), false);
+} catch(e) {
+try {
+var range = editdoc.selection.createRange();
+if(range.htmlText && range.text) {
+return range.text;
+} else {
+var htmltext = '';
+for(var i = 0; i < range.length; i++) {
+htmltext += range.item(i).outerHTML;
+}
+return htmltext;
+}
+} catch(e) {
+return '';
+}
+}
+} else {
+if(!isUndefined(editdoc.selectionStart)) {
+return editdoc.value.substr(editdoc.selectionStart, editdoc.selectionEnd - editdoc.selectionStart);
+} else if(document.selection && document.selection.createRange) {
+return document.selection.createRange().text;
+} else if(window.getSelection) {
+alert(editdoc);
+return window.getSelection() + '';
+} else {
+return false;
+}
+}
+}
+</script>
+<script type="text/javascript" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/mw_syntaxhighlighter.js.下载"></script><script type="text/javascript" reload="1">mw_syntaxhighlighter("fastpost");</script>
+<!-- mw_syntaxhighlighter ver.3.0.83 Begin -->
+<script type="text/javascript" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/shCore.js.下载"></script>
+<script type="text/javascript" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/shAutoloader.js.下载"></script>
+<script type="text/javascript" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/shBrushXml.js.下载"></script>
+<script type="text/javascript">//<![CDATA[
+	SyntaxHighlighter.autoloader(
+	"applescript	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAppleScript.js?ver=3.0.83"
+	,"as3 actionscript3	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0.83"
+	,"bash shell	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.83"
+	,"cf coldfusion	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0.83"
+	,"cpp c	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0.83"
+	,"c# c-sharp csharp	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.83"
+	,"css	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0.83"
+	,"delphi pas pascal	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0.83"
+	,"diff patch	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0.83"
+	,"erl erlang	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0.83"
+	,"groovy	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0.83"
+	,"java	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0.83"
+	,"jfx javafx	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0.83"
+	,"js jscript javascript	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.83"
+	,"perl pl	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0.83"
+	,"php	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.83"
+	,"plain text	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.83"
+	,"ps powershell	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0.83"
+	,"py python	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0.83"
+	,"rails ror ruby rb	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0.83"
+	,"sass scss	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSass.js?ver=3.0.83"
+	,"scala	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0.83"
+	,"sql	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0.83"
+	,"vb vbnet	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0.83"
+	,"xml xhtml xslt html	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.83"
+	,"objc	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushObjC.js?ver=3.0.83"
+	,"asm	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAsm.js?ver=3.0.83"
+	,"aauto	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAAuto.js?ver=3.0.83"
+	,"go golang	http://bbs.itheima.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGo.js?ver=3.0.83"
+	);
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	SyntaxHighlighter.defaults['quick-code'] = true;
+	SyntaxHighlighter.defaults['title'] = '';
+	SyntaxHighlighter.defaults['class-name'] = 'notranslate';
+	SyntaxHighlighter.defaults['collapse'] = false;
+	SyntaxHighlighter.defaults['first-line'] = 1;
+	SyntaxHighlighter.defaults['gutter'] = true;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = 1;
+	SyntaxHighlighter.defaults['smart-tabs'] = true;
+	SyntaxHighlighter.defaults['tab-size'] = 4;
+	SyntaxHighlighter.defaults['toolbar'] = true;
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter';
+	SyntaxHighlighter.config.strings.noBrush = "Can\'t find brush for: ";
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = "Brush wasn\'t configured for html-script option: ";
+	SyntaxHighlighter.all();
+	
+//]]></script>
+<!-- mw_syntaxhighlighter ver.3.0.83 End -->
+
+<script type="text/javascript">
+(function() {
+var viewsource = [];
+var copycode = [];
+if(document.getElementsByClassName) {
+viewsource = document.getElementsByClassName('viewsource');
+copycode = document.getElementsByClassName('copycode');
+} else {
+var emlist = document.getElementsByTagName('em');
+for(var i=0;i<emlist.length;i++) {
+if(emlist[i].className == 'viewsource') {
+viewsource.push(emlist[i]);
+} else if(emlist[i].className == 'copycode') {
+copycode.push(emlist[i]);
+}
+}
+}
+function mw_code_toolbar_addevent(objs, eventtype) {
+for(var i=0; i<objs.length; i++) {
+if(objs[i].id != undefined) {
+objs[i].setAttribute('num', i);
+objs[i].onclick = function() {
+var highlighters = SyntaxHighlighter.vars.highlighters;
+var k = 0;
+var num = this.getAttribute('num');
+for(var i in highlighters) {
+if(k == num) {
+if(eventtype == 'viewcode') {
+mw_viewcode_execute(highlighters[i]);
+} else if(eventtype == 'copycode') {
+mw_copycode_execute(highlighters[i]);
+}
+break;
+}
+k++;
+}
+return false;
+}
+}
+}
+}
+if(viewsource) {
+mw_code_toolbar_addevent(viewsource, 'viewcode');
+}
+if(copycode) {
+mw_code_toolbar_addevent(copycode, 'copycode');
+}
+function mw_viewcode_execute(highlighter) {
+var code = mw_get_code(highlighter);
+code = mw_fixinputstring(code).replace(/</g, '&lt;');
+var wnd = mw_popup('', '_blank', 750, 400, 'location=0, resizable=1, menubar=0, scrollbars=1');
+code = mw_unindent(code);
+wnd.document.write('<pre>' + code + '</pre>');
+wnd.document.close();
+}
+function mw_copycode_execute(highlighter) {
+var code = mw_get_code(highlighter);
+code = mw_fixinputstring(code)
+.replace(/&lt;/g, '<')
+.replace(/&gt;/g, '>')
+.replace(/&amp;/g, '&')
+;
+code = mw_unindent(code);
+setCopy(code, '代码已复制到剪贴板');
+}
+function mw_fixinputstring(str) {
+var br = /<br\s*\/>|<br\s*>|&lt;br\s*\/?&gt;/gi;
+if(SyntaxHighlighter.config.bloggerMode == true) {
+str = str.replace(br, '\n');
+}
+if(SyntaxHighlighter.config.stripBrs == true) {
+str = str.replace(br, '');
+}
+return str;
+}
+function mw_popup(url, name, width, height, options) {
+var x = (screen.width - width) / 2,
+y = (screen.height - height) / 2
+;
+options +=	', left=' + x +
+', top=' + y +
+', width=' + width +
+', height=' + height
+;
+options = options.replace(/^,/, '');
+var win = window.open(url, name, options);
+win.focus();
+return win;
+}
+function mw_unindent(str) {
+var lines = mw_fixinputstring(str).split('\n'),
+indents = new Array(),
+regex = /^\s*/,
+min = 1000
+;
+for(var i = 0; i < lines.length && min > 0; i++) {
+var line = lines[i];
+if(mw_trim(line).length == 0) {
+continue;
+}
+var matches = regex.exec(line);
+if(matches == null) {
+return str;
+}
+min = Math.min(matches[0].length, min);
+}
+if(min > 0) {
+for(var i = 0; i < lines.length; i++) {
+lines[i] = lines[i].substr(min);
+}
+}
+return lines.join('\n');
+}
+function mw_trim(str) {
+return str.replace(/^\s+|\s+$/g, '');
+}
+function mw_get_code(highlighter) {
+
+var container = mw_findelement($('highlighter_' + highlighter.id), '.container');
+var lines = container.childNodes;
+var code = [];
+for(var i=0; i<lines.length; i++) {
+code.push(lines[i].innerText || lines[i].textContent);
+}
+code = code.join('\r');
+return code;
+
+}
+function mw_findelement(target, search, reverse) {
+if(target == null)
+return null;
+var nodes = reverse != true ? target.childNodes : [ target.parentNode ],
+propertyToFind	= { '#' : 'id', '.' : 'className' }[search.substr(0, 1)] || 'nodeName',
+expectedValue,
+found
+;
+expectedValue = propertyToFind != 'nodeName'
+? search.substr(1)
+: search.toUpperCase()
+;
+if((target[propertyToFind] || '').indexOf(expectedValue) != -1)
+return target;
+for(var i = 0; nodes && i < nodes.length && found == null; i++)
+found = mw_findelement(nodes[i], search, reverse);
+return found;
+}
+})();
+</script>
+
+<div id="footer" class="footer cl">
+
+<div class="footert">
+  <div class="footertw">
+    <div class="footertl">
+      <div class="fabout">
+        <dl>
+          <dt>学员培训</dt>
+          <dd><a href="http://ww%20aw.itheima.com/special/hmjavaeezly/" target="_blank">JavaEE</a>
+| <a href="http://www.itheima.com/special/pythonzly/" target="_blank">Python+人工智能</a>
+| <a href="http://www.itheima.com/special/webzly/" target="_blank">前端与移动</a>
+| <a href="http://www.itheima.com/special/szicd/" target="_blank">UI/UE设计</a>
+| <a href="http://www.itheima.com/special/hmcloudzly/" target="_blank">大数据</a>
+</dd>
+
+<dd><a href="http://www.itheima.com/special/testzly/" target="_blank">软件测试</a>
+| <a href="http://www.itheima.com/special/hmczl/" target="_blank">C/C++</a>
+| <a href="http://www.itheima.com/special/xmtzly/" target="_blank">新媒体+短视频</a>
+| <a href="http://www.itheima.com/special/pmzly/" target="_blank">产品经理</a>
+| <a href="http://www.itheima.com/special/movieszly/" target="_blank">影视制作</a>
+</dd>
+
+<dd><a href="http://www.itheima.com/special/linuxzly/" target="_blank">Linux云计算+运维</a>
+| <a href="http://www.itheima.com/special/robotzly/" target="_blank">智能机器人软件开发</a>
+| <a href="http://www.itheima.com/special/uidszly/" target="_blank">电商视觉运营</a>
+</dd>        </dl>
+      </div>
+      <div class="ftousu">
+        <dl>
+          <dt>关于我们</dt>
+          <dd><a href="http://www.itheima.com/about/about.html" target="_blank" rel="nofollow">黑马概况</a></dd>
+          <dd><a href="http://bbs.itheima.com/portal.php?dbgg" target="_blank" rel="nofollow">学员故事</a></dd>
+          <dd><a href="http://www.itheima.com/special/hmschool/index.shtml" target="_blank" rel="nofollow">全国校区</a></dd>
+        </dl>
+      </div>
+      <div class="flianxi">
+        <dl>
+          <dt>帮助信息</dt>
+          <dd><a href="http://www.itheima.com/flow/flow.html" target="_blank" rel="nofollow">报名流程</a></dd>
+          <dd><a href="http://yun.itheima.com/" target="_blank" rel="nofollow">自学教程</a></dd>
+          <dd><a href="http://www.itheima.com/flow/flowbasic.html?v1" target="_blank" rel="nofollow">入学须知</a></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footertr">
+      <ul>
+        <li style="float: right; margin-right: 10px;text-align: center;"><a href="http://weibo.com/itheima" rel="nofollow" target="_blank" title="微博扫码关注或点击访问" style="color:#ABA6A6"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/sweibo.png" border="0" width="100" style="padding: 5px; background: #FFFFFF; color:#ABA6A6" data-bd-imgshare-binded="1"><br>官方微博</a></li>
+<li style="float: right; margin-right: 15px;text-align: center;"><a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzI0NjM3NjI1NQ==&amp;scene=124#wechat_redirect" rel="nofollow" target="_blank" title="微信扫码关注或点击访问" style="color:#ABA6A6"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/weixin.png" border="0" width="100" style="padding: 5px; background: #FFFFFF; color:#ABA6A6" data-bd-imgshare-binded="1"><br>官方微信</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ <div class="biaoqib_flink">
+  <div style="width: 1100px; margin: 0 auto;" class="biaoqib_in_flink cl" id="ft">
+    <div class="biaoqib_footer_y z">
+       <a href="http://bbs.itheima.com/forum.php?mobile=yes">手机版</a><span class="pipe">|</span><a href="http://bbs.itheima.com/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span><strong><a href="http://bbs.itheima.com/" target="_blank">黑马程序员社区</a></strong>
+( <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow">苏ICP备16007882号-1</a> )<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7ea6c0c8412eb91d6e44a2459dc4ae81' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=7ea6c0c8412eb91d6e44a2459dc4ae81" target="_blank"><img border="0" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/21.gif" width="20" height="20" data-bd-imgshare-binded="1"></a><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3092227'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D3092227' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_3092227"><a href="https://www.cnzz.com/stat/website.php?web_id=3092227" target="_blank" title="站长统计">站长统计</a></span><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/stat.php" type="text/javascript"></script><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/core(1).php" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript">jQuery('.aimg_tip').remove()</script>
+<!--admin@zheima.com_6760-->
+<a href="http://webscan.360.cn/index/checkwebsite/url/bbs.itheima.com" name="ddce2cb7798b3f50736a58eb1d335210">360网站安全检测平台</a>
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32132202000574" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/baicon.png" style="float:left;" data-bd-imgshare-binded="1"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">苏公网安备 32132202000574号</p></a>
+	    </div>
+    <div class="biaoqib_flink_y y">
+       Powered by <a class="wp-link" href="http://www.itcast.cn/" title="传智播客" target="_blank"><span>传智播客</span></a>
+   <!--92810专员将此处Discuz! X3.2版权写死固定成传智播客并且链接更换为传智播客-->
+    </div>
+  </div>
+ </div> 
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/home.php" type="text/javascript"></script> 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+  
+<!--
+<div id="share">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;uin=3414556270&amp;Site" target="_blank" class="moquu_wmaps"></a>
+<a id="totop" title="">返回顶部</a>
+</div>
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(function(){
+        //首先将#back-to-top隐藏
+        jQuery("#share").hide();
+        //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+        jQuery(function () {
+            jQuery(window).scroll(function(){
+                if (jQuery(window).scrollTop()>100){
+                    jQuery("#share").fadeIn();
+                }
+                else
+                {
+                    jQuery("#share").fadeOut();
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            jQuery("#totop").click(function(){
+                jQuery('body,html').animate({scrollTop:0},500);
+                return false;
+            });
+        });
+    }); 
+</script>
+-->
+
+<script type='text javascript' src="https://webchat.7moor.com/javascripts/7moorInit.js?accessId=994d4130-1df9-11e9-b7ec-7766c2691ec6&amp;autoShow=false&amp;language=ZHCN"  async="async">
+
+<script type="text/javascript">
+      jQuery(document).ready(function(){
+         jQuery('.top_post_filter .best_post').hover(function(){
+            jQuery(this).addClass('active').siblings().removeClass('active');
+                var target_id=jQuery(this).data('id');
+            jQuery('#'+target_id).addClass('active').siblings().removeClass('active');
+         });
+ //当点击搜索遮罩后，隐藏搜索框
+            jQuery(".global-search-mask").click(function(){
+jQuery('.close-search').click();
+jQuery('.global-search-mask').hide();
+                return false;
+            });
+     });
+</script>
+
+ 
+ 			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '7548030|X3.2|0.6||0||0|7|1586043041|bdf2e840bf63d8f144d5c116267a007e|2';
+			</script>
+			<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script></script type='text></div><script type="text/javascript" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/service"></script>
+
+
+<script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/select_view.js.下载"></script><script src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/filesa.min.js.下载"></script><div id="bdimgshare_1586043041295" class="sr-bdimgshare sr-bdimgshare-list sr-bdimgshare-16 sr-bdimgshare-black" style="height:36px;line-height:26px;font-size:12px;width:autopx;display:none;" data-bd-bind="1586043041295"><div class="bdimgshare-bg"></div><div class="bdimgshare-content bdsharebuttonbox bdshare-button-style0-16"><label class="bdimgshare-lbl">分享到：</label><a href="http://bbs.itheima.com/#" onclick="return false;" class="bds_qzone" data-cmd="qzone" hidefocus=""></a><a href="http://bbs.itheima.com/#" onclick="return false;" class="bds_tsina" data-cmd="tsina" hidefocus=""></a><a href="http://bbs.itheima.com/#" onclick="return false;" class="bds_tqq" data-cmd="tqq" hidefocus=""></a><a href="http://bbs.itheima.com/#" onclick="return false;" class="bds_renren" data-cmd="renren" hidefocus=""></a><a href="http://bbs.itheima.com/#" onclick="return false;" class="bds_weixin" data-cmd="weixin" hidefocus=""></a><a href="http://bbs.itheima.com/#" onclick="return false;" class="bds_more" data-cmd="more" hidefocus=""></a></div></div><iframe frameborder="0" id="bdSharePopup_selectshare1586043041316bg" class="bdselect_share_bg" style="display:none;" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/saved_resource(2).html"></iframe><div id="bdSharePopup_selectshare1586043041316box" style="display: none;" share-type="selectshare" class="bdselect_share_box" data-bd-bind="1586043041315"><div class="selectshare-mod-triangle"><div class="triangle-border"></div><div class="triangle-inset"></div></div><div class="bdselect_share_head"><span>分享到</span><a href="http://www.baidu.com/s?wd=&amp;tn=SE_hldp08010_vurs2xrp" class="bdselect_share_dialog_search" target="_blank"><i class="bdselect_share_dialog_search_i"></i><span class="bdselect_share_dialog_search_span">百度一下</span></a><a class="bdselect_share_dialog_close"></a></div><div class="bdselect_share_content"><ul class="bdselect_share_list bdshare-button-style0-16"><div class="bdselect_share_partners"><a href="http://bbs.itheima.com/#" class="bds_qzone" data-cmd="qzone"></a><a href="http://bbs.itheima.com/#" class="bds_tsina" data-cmd="tsina"></a><a href="http://bbs.itheima.com/#" class="bds_tqq" data-cmd="tqq"></a><a href="http://bbs.itheima.com/#" class="bds_renren" data-cmd="renren"></a><a href="http://bbs.itheima.com/#" class="bds_weixin" data-cmd="weixin"></a></div><a href="http://bbs.itheima.com/#" class="bds_more" data-cmd="more"></a></ul></div></div><iframe width="1px" height="1p" frameborder="0" scrolling="no" src="./关于Django项目《美多商城》的全部流程(上)-从立项到商品-黑马程序员技术交流社区_files/tj_oli.min.html"></iframe></body></html>
